@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto);
+}
+
+img {
+    border-radius: 50%;
+    width:52px;
+    height:52px;
+}
+
+#center-things {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#center-things .p{
+    color: rgb(58, 58, 58);
+}
+
+#member {
+    margin: 25px;
+}
+
+HR {
+    color: black;
+}
