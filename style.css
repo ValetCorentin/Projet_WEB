@@ -13,11 +13,12 @@ body {
     font-family: Roboto;
 }
 
+.trait {
+    margin: 15px;
+}
+
 HR {
-    color: black;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    color: #C4C4C4;
 }
 
 img {
@@ -53,7 +54,7 @@ footer{
 }
 
 footer .legal{
-    color: #fff;
-    background: #111;
+    color: rgb(0, 0, 0);
+    background: #C4C4C4;
     padding: 20px;
 }
