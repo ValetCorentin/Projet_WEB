@@ -22,23 +22,14 @@
   ]);
 
 // préparation d'une requête 
-function createQuery{($queryString, $connextion)
-  $query = $connexion->query("SELECT * FROM contact");/*création de la requete*/
+  $query = $connexion->query("SELECT * FROM permissions");/*création de la requete*/
     if($query === false){
       var_dump($connexion->errorInfo());
       die('Erreur SQL');
     }
-}
-
 
 $posts = $query->fetchAll();
-
 ?>
-<ul>
-    <?php foreach($posts as $post): ?>
-    <li><a href="./edit.php?id=<?= $post->NoPil?>"><?= htmlentities($post->NoPil).' '.htmlentities($post->NomPil).' | '.htmlentities($post->NatPil) ?></a></li>
-    <?php endforeach ?>
-</ul>
 
 </body>
 </html>
