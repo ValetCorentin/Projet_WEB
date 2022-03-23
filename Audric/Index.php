@@ -11,25 +11,51 @@
 <h1>Tests du back</h1>
 
 <?php
+
+// constantes pour la connexion
   $servername = 'localhost';
   $dbname = 'projet_chopes_ton_stage';
   $username = 'root';
   $password = '';
+
 // Etablissment de la connexion avec la BDD
 
   $connexion = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password,[
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ /*PDO::FETCH_OBJ utile pour nettoyer le retour des queries*/
   ]);
 
+  $stringouze = "SELECT * FROM permissions"
 // préparation d'une requête 
-  $query = $connexion->query("SELECT * FROM permissions");/*création de la requete*/
+
+function createConnexion($conn, $queryString){
+  $query = $conn->query($queryString);/*création de la requete*/
     if($query === false){
-      var_dump($connexion->errorInfo());
+      var_dump($conn->errorInfo());
       die('Erreur SQL');
     }
+  return $query;
+}   
 
-$posts = $query->fetchAll();
+$posts = createConnexion($connexion, $stringouze)->fetchAll();
 ?>
+
+
+<?php
+function debug($var){
+  ?>
+  <pre>
+  <?php
+  echo "Ma var: ".$var."<br>";
+  var_dump($var);
+  ?>
+  </pre>
+  <?php
+}
+
+debug($posts);
+echo($posts[0]->Permission_ID);
+?>
+
 
 </body>
 </html>
