@@ -3,6 +3,20 @@
     src: url(assets/font/Roboto);
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+}
+
+HR {
+    color: black;
+}
+
 img {
     border-radius: 50%;
     width:52px;
@@ -25,6 +39,20 @@ img {
     margin: 25px;
 }
 
-HR {
-    color: black;
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 10px;
+    color: #fff;
+}
+
+footer .legal{
+    margin: 20px;
 }
