@@ -118,15 +118,17 @@ footer .legal{
     border: 2px solid #ff0000;
   }
 
-#img-traineeship {
-    display: flex;
-    flex-direction: column;
-    width:190px;
-    height:110px;
+  #link-1 {
+    color: black;
+    text-decoration: none;
 }
 
-#title-traineeship {
-    display: flex;
-    flex-direction: row;
-    margin-left: 300px;
+  #link-2 {
+    color: black;
+    text-decoration: none;
+}
+
+  #link-3 {
+    color: black;
+    text-decoration: none;
 }
