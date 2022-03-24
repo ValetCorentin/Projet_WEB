@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.trait {
+    margin: 15px;
+}
+
+HR {
+    color: #C4C4C4;
+}
+
+img {
+    border-radius: 50%;
+    width:52px;
+    height:52px;
+}
+
+#center-things {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#center-things .p{
+    color: rgb(58, 58, 58);
+}
+
+#member {
+    margin: 25px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px; 
+}
+
+footer .legal{
+    color: rgb(0, 0, 0);
+    background: #C4C4C4;
+    padding: 20px;
+}
