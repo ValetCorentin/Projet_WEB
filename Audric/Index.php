@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <a href="./authentificationPage.php"> page d'authentification</a>
 <form method="GET">
    <input type="search" name="q" placeholder="Recherche..." />
    <input type="submit" value="Valider" />
@@ -20,7 +21,7 @@
   $username = 'root';
   $password = '';
 
-  'id' => $_GET['q']
+  // 'id' => $_GET['q']
 
   
 // Etablissment de la connexion avec la BDD
