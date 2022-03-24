@@ -18,7 +18,7 @@ HR {
     color: #C4C4C4;
 }
 
-img {
+#pp {
     border-radius: 50%;
     width:52px;
     height:52px;
@@ -54,4 +54,79 @@ footer .legal{
     color: rgb(0, 0, 0);
     background: #C4C4C4;
     padding: 20px;
+}
+
+#box1 {
+    display: flex;
+    flex-direction: column;
+
+    display: flex;
+    flex-direction: row;
+
+    padding : 1em;
+    box-sizing: border-box;
+  
+    margin: auto;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 20px 20px 20px 20px;
+    margin-left: 40px;
+  }
+
+  #box1:hover{
+    border: 2px solid #ff0000;
+  }
+
+  #box2 {
+    display: flex;
+    flex-direction: column;
+
+    display: flex;
+    flex-direction: row;
+
+    padding : 1em;
+    box-sizing: border-box;
+  
+    margin: auto;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 20px 20px 20px 20px;
+  }
+
+  #box2:hover{
+    border: 2px solid #ff0000;
+  }
+
+  #box3 {
+    display: flex;
+    flex-direction: column;
+
+    display: flex;
+    flex-direction: row;
+
+    padding : 1em;
+    box-sizing: border-box;
+  
+    margin: auto;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 20px 20px 20px 20px;
+    margin-right: 40px;
+  }
+
+  #box3:hover{
+    border: 2px solid #ff0000;
+  }
+
+#img-traineeship {
+    display: flex;
+    flex-direction: column;
+    width:190px;
+    height:110px;
+}
+
+#title-traineeship {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
 }
