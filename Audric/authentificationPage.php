@@ -16,10 +16,10 @@
       <br>
       <form action="" method="post" id="spacing">
         <label for="login">Identifiant :</label>
-        <input type="text" name="login" placeholder="JeanMiDu13">
+        <input type="text" name="login" placeholder="JeanMiDu13" style ="border-radius:5px; border-color:black;">
         <br>
         <label for="password">Mot de passe :</label>
-        <input type="password" name="password" placeholder="Identifiant">
+        <input type="password" name="password" placeholder="Identifiant" style ="border-radius:5px; border-color:black;">
         <br>
         <button id="connect-button">
           Se connecter

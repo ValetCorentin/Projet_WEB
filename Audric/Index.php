@@ -9,6 +9,8 @@
 </head>
 <body>
   <a href="./authentificationPage.php"> page d'authentification</a>
+  <a href="./offerPage.php"> page d'offre</a>
+
 <form method="GET">
    <input type="search" name="q" placeholder="Recherche..." />
    <input type="submit" value="Valider" />
