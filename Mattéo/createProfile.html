@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chopes ton stage - Création de profil</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- logo à implémenter -->
+      <img src="" alt="Logo Chopes ton stage" />
+      <nav>
+        <!-- navbar à implémenter -->
+      </nav>
+    </header>
+    <main>
+      <h1>Création de profil</h1>
+      <hr />
+
+      <!-- action à implémenter -->
+      <form action="" name="Profil_creation_form" method="post">
+        <div id="Login_ID_box">
+          <!-- Login ID -->
+          <label for="Login_ID">Identifiant de connexion</label>
+          <input type="text" name="Login_ID" id="Login_ID_Input" />
+        </div>
+
+        <div id="Password_box">
+          <!-- Password -->
+          <label for="Login_Password">Mot de passe</label>
+          <input
+            type="password"
+            name="Login_Password"
+            id="Login_ID_Input"
+            minlength="8"
+            placeholder="8 caractères minimum"
+          />
+        </div>
+
+        <div id="Surname_box">
+          <!-- Surname -->
+          <label for="Surname">Nom</label>
+          <input type="text" name="Surname" id="Surname_Input" required />
+        </div>
+
+        <div id="Name_box">
+          <!-- Name -->
+          <label for="Name">Prénom</label>
+          <input type="text" name="Name" id="Name_Input" required />
+        </div>
+
+        <div id="E-mail_box">
+          <!-- E-mail -->
+          <label for="E-mail">E-mail</label>
+          <input type="email" name="E-mail" id="E-mail_Input" required />
+        </div>
+
+        <div id="Profile_type_box">
+          <!-- Profile type -->
+          <label for="Profil_type">Type de profil</label>
+          <select
+            type="text"
+            name="Profil_type"
+            id="Profil_type_Input"
+            required
+          >
+            <option value="" disabled selected>Choisissez un profil</option>
+            <option value="Administrator">Admnistrateur</option>
+            <option value="Pilot">Pilote</option>
+            <option value="Student">Étudiant</option>
+            <option value="Delegate">Délégué</option>
+          </select>
+        </div>
+
+        <div id="Country_box">
+          <label for="Country">Pays</label>
+          <input type="text" name="Country" id="Country_Input" required />
+        </div>
+
+        <div id="Region_box">
+          <label for="Region">Région</label>
+          <input type="text" name="Region" id="Region_Input" required />
+        </div>
+
+        <div id="City_box">
+          <label for="City">Ville</label>
+          <input type="text" name="City" id="City_Input" required />
+        </div>
+
+        <div id="ZIP_Code_box">
+          <label for="ZIP_Code">Code Postal</label>
+          <input type="text" name="ZIP_Code" id="ZIP_Code_Input" required />
+        </div>
+
+        <div id="Address_box">
+          <label for="Address">Adresse</label>
+          <input type="text" name="Address" id="Address_Input" required />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
