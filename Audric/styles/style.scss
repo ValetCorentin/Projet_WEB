@@ -10,11 +10,13 @@
   background-color: lightgrey;
   box-shadow: 2px 5px 5px grey;
   margin: 20px;
+  box-sizing: border-box;
   .research-form {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    flex-wrap: wrap;
     .research-input {
       border-radius: 6px;
       border-color: black;

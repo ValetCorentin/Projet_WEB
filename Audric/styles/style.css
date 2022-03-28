@@ -11,6 +11,8 @@
   -webkit-box-shadow: 2px 5px 5px grey;
           box-shadow: 2px 5px 5px grey;
   margin: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .research-box .research-form {
@@ -25,6 +27,8 @@
           justify-content: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .research-box .research-form .research-input {
