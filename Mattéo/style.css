@@ -43,5 +43,10 @@ form div input, form div select {
   width: 257px;
   text-align: center;
 }
+form #login_and_password_box {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
 /*# sourceMappingURL=style.css.map */

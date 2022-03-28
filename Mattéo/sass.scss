@@ -57,10 +57,16 @@ form {
     }
 
     
+    
+  }
+  #login_and_password_box{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 
 // Responsive
-@media screen and (max-width: 500px) {
+@media (max-width: 360px) {
       
 }
