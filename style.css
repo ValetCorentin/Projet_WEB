@@ -1,134 +1,52 @@
-@font-face {
-    font-family: Roboto;
-    src: url(assets/font/Roboto);
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: Roboto; */
 }
 
 .trait {
-    margin: 15px;
+  margin: 15px;
 }
 
 HR {
-    color: #C4C4C4;
+  color: #C4C4C4;
 }
 
 #pp {
-    border-radius: 50%;
-    width:52px;
-    height:52px;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
 }
 
 #center-things {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
-#center-things .p{
-    color: rgb(58, 58, 58);
+#center-things .p {
+  color: #3a3a3a;
 }
 
 #member {
-    margin: 25px;
+  margin: 25px;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: auto;
-    width: 100vw;
-    padding-top: 40px; 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+}
+footer .legal {
+  color: black;
+  background: #C4C4C4;
+  padding: 20px;
 }
 
-footer .legal{
-    color: rgb(0, 0, 0);
-    background: #C4C4C4;
-    padding: 20px;
-}
-
-#box1 {
-    display: flex;
-    flex-direction: column;
-
-    display: flex;
-    flex-direction: row;
-
-    padding : 1em;
-    box-sizing: border-box;
-  
-    margin: auto;
-    padding: 10px;
-    border-radius: 6px;
-    margin: 20px 20px 20px 20px;
-    margin-left: 40px;
-  }
-
-  #box1:hover{
-    border: 2px solid #ff0000;
-  }
-
-  #box2 {
-    display: flex;
-    flex-direction: column;
-
-    display: flex;
-    flex-direction: row;
-
-    padding : 1em;
-    box-sizing: border-box;
-  
-    margin: auto;
-    padding: 10px;
-    border-radius: 6px;
-    margin: 20px 20px 20px 20px;
-  }
-
-  #box2:hover{
-    border: 2px solid #ff0000;
-  }
-
-  #box3 {
-    display: flex;
-    flex-direction: column;
-
-    display: flex;
-    flex-direction: row;
-
-    padding : 1em;
-    box-sizing: border-box;
-  
-    margin: auto;
-    padding: 10px;
-    border-radius: 6px;
-    margin: 20px 20px 20px 20px;
-    margin-right: 40px;
-  }
-
-  #box3:hover{
-    border: 2px solid #ff0000;
-  }
-
-  #link-1 {
-    color: black;
-    text-decoration: none;
-}
-
-  #link-2 {
-    color: black;
-    text-decoration: none;
-}
-
-  #link-3 {
-    color: black;
-    text-decoration: none;
-}
+/*# sourceMappingURL=style.css.map */
