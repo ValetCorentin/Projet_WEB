@@ -1,0 +1,254 @@
+/* IMPORT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Color */
+/* Size */
+/* Padding */
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+/* Basic styling */
+.navbar {
+  background: #181818;
+  padding: 0 15px;
+  font-family: 16px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar .navbar-item {
+  padding: 10px;
+}
+
+.navbar-menu,
+.navbar-submenu {
+  list-style-type: none;
+}
+
+.navbar-logo {
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
+}
+
+.navbar-item a:hover::after {
+  color: #ccc;
+}
+
+/* Mobile menu */
+.navbar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-menu li a {
+  display: block;
+  padding: 15px 5px;
+}
+
+.navbar-menu li.navbar-subitem a {
+  padding: 15px;
+}
+
+.navbar-toggle {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  font-size: 20px;
+}
+
+.navbar-item {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.active .navbar-item {
+  display: block;
+  z-index: 100;
+  background-color: #181818;
+}
+
+/* Submenu up from mobile screens */
+.navbar-submenu {
+  display: none;
+}
+
+.navbar-submenu-active .navbar-submenu {
+  display: block;
+}
+
+.has-submenu i {
+  font-size: 12px;
+}
+
+.has-submenu > a::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 900;
+  content: "\f078";
+  color: white;
+  padding-left: 5px;
+}
+
+.navbar-subitem a {
+  padding: 10px 15px;
+}
+
+.navbar-submenu-active {
+  background-color: black;
+  border-radius: 3px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+  .navbar-menu {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar-logo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .navbar-toggle {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    text-align: right;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+/* Desktop menu */
+@media all and (min-width: 960px) {
+  .navbar-menu {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    background: none;
+  }
+  .navbar-logo {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .navbar-item {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .navbar-submenu-active .navbar-submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 68px;
+    background: #111;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-submenu-active {
+    border-radius: 0;
+  }
+}
+
+/* FOOTER */
+.footer-trait {
+  margin: 15px;
+}
+
+HR {
+  color: #C4C4C4;
+}
+
+#footer-pp {
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+}
+
+#footer-center-things {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#footer-center-things .p {
+  color: #3a3a3a;
+}
+
+#footer-member {
+  margin: 25px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  z-index: 1;
+}
+
+footer .footer-legal {
+  color: #b9b9b9;
+  background: #323232;
+  padding: 20px;
+}
+
+footer #footer-apropos {
+  text-decoration: none;
+  color: #b9b9b9;
+  margin-left: 2px;
+}
+
+/* Color */
+/* Size */
+/* Padding */
+/*# sourceMappingURL=style.css.map */
