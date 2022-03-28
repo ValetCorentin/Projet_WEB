@@ -1,5 +1,27 @@
+header {
+  background-color: aqua;
+}
+
 * {
   font-family: Roboto, sans-serif;
+}
+
+#offer-number {
+  text-align: center;
+}
+
+.offer-box {
+  margin: 3%;
+  background-color: lightgrey;
+  box-shadow: 2px 5px 5px grey;
+}
+
+.offer-image.col-4 {
+  height: 200px;
+  align-self: center;
+  padding: 0;
+  width: 100%;
+  max-width: 200px;
 }
 
 #main-box {
