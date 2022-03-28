@@ -19,14 +19,17 @@
   <main class="container">
 
     <div class="row research-box">
-      <div>
-        <form action="">
-          <label for="domain-selector">Domaine</label>
-          <input type="text">
-          <input type="text">
-          <input type="submit" value="Rechercher">
-        </form>
-      </div>
+      <form action="" class="research-form">
+        <label for="domain-selector">Domaine :</label>
+        <input list="domains" class="research-input">
+        <datalist id="domains">
+          <option value="BDD">
+          <option value="Réseau">
+          <option value="Systèmes embarqués">
+        </datalist>
+        <input type="text" class="research-input">
+        <input type="submit" value="Rechercher" class="research-input research-button">
+      </form>
     </div>
 
 
