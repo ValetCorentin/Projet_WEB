@@ -13,103 +13,26 @@
     <title>Chopes ton stage</title>
   </head>
   <body>
-                                        <!-- Header with navbar -->
-    <header>
-      <nav class="navbar">
-        <ul class="navbar-menu">
-          <li class="navbar-logo"><a href="#">Chopes ton stage</a></li>
-          <li class="navbar-item has-submenu">
-            <a tabindex="0">Rechercher</a>
-            <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Stages</a></li>
-              <li class="navbar-subitem"><a href="#">Entreprises</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item has-submenu">
-            <a tabindex="0">Favoris</a>
-            <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Offres postulées</a></li>
-              <li class="navbar-subitem"><a href="#">Wishlist</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item has-submenu">
-            <a tabindex="0">Statistiques</a>
-            <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Profils</a></li>
-              <li class="navbar-subitem"><a href="#">Entreprises</a></li>
-              <li class="navbar-subitem"><a href="#">Stages</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item has-submenu">
-            <a tabindex="0">Stages</a>
-            <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Modifier</a></li>
-              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="#">Créer</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item has-submenu">
-            <a tabindex="0">Profils</a>
-            <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Modifier</a></li>
-              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="#">Créer</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item has-submenu">
-            <a tabindex="0">Entreprises</a>
-            <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Modifier</a></li>
-              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="#">Créer</a></li>
-            </ul>
-          </li>
-            <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-        </ul>
-      </nav>
-    </header>
-
-                                        <!-- Footer -->
-    <footer>
-      <div class="footer-trait" id="footer-center-things">
-          <HR ALIGN=CENTER WIDTH="800">
-      </div>
-          <p id="footer-center-things">Notre équipe :</p>
-
-      <div id="footer-center-things">
-          <div id="footer-member">
-              <a href="https://github.com/Didicap" target="_blank"><img id="footer-pp" src="images/Odric.png" alt="noPP"></a>
-              <br>
-              <p>Audric CAPET</p>
-          </div>
-          <div id="footer-member">
-              <a href="https://www.linkedin.com/in/mathieu-gu%C3%A9nier-a513a0215/" target="_blank"><img id="footer-pp" src="images/M.png" alt="noPP"></a>
-              <br>
-              <p>Mathieu GUENIER</p>
-          </div>
-          <div id="footer-member">
-              <a href="https://github.com/Mattken12" target="_blank"><img id="footer-pp" src="images/matteo.png" alt="noPP"></a>
-              <br>
-              <p>Mattéo FAUVEL</p>
-          </div>
-          <div id="footer-member">
-              <a href="https://github.com/P3mast" target="_blank"><img id="footer-pp" src="images/Olivier.png" alt="noPP"></a>
-              <br>
-              <p>Olivier GOSSET</p>
-          </div>
-              
-          <div id="footer-member">
-              <a href="https://github.com/VALET-Corentin" target="_blank"><img id="footer-pp" src="images/Coco.png" alt="noPP"></a>
-              <br>
-              <p>Corentin VALET</p>
-          </div>
-      </div>
-      <div class="footer-legal">
-          <p id="footer-center-things">2022</p>
-          <p id="footer-center-things">Mentions Légales - <a id="footer-apropos" href="#">A propos de nous</a></p>
-      </div>
-  </footer>
-
+    <main id="main-box">
+        <!-- <img src="logo.png" alt="logo" style="width:100px; margin:12px;"> -->
+        <div id="authentification-box" style="margin:12px;">
+          <h1 id="authentification-title">S'authentifier :</h1>
+          <br>
+          <form action="" method="post" id="spacing">
+            <label for="login">Identifiant :</label>
+            <input type="text" name="login" placeholder="JeanMiDu13" style="border-radius:5px; border-color:black;">
+            <br>
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" placeholder="Identifiant" style="border-radius:5px; border-color:black;">
+            <br>
+            <button id="connect-button">
+              Se connecter
+            </button>
+          </form>
+        </div>
+      </main>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                           
     <!-- Script -->
     <script src="/js/js.js"></script>
   </body>

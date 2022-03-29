@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Links -->
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+
+    <title>Chopes ton stage</title>
+  </head>
+  <body id="createCompany-body">
+                                        <!-- Header with navbar -->
+    <header>
+      <nav class="navbar">
+        <ul class="navbar-menu">
+          <li class="navbar-logo"><a href="home.html">Chopes ton stage</a></li>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Rechercher</a>
+            <ul class="navbar-submenu">
+              <li class="navbar-subitem"><a href="#">Stages</a></li>
+              <li class="navbar-subitem"><a href="#">Entreprises</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Favoris</a>
+            <ul class="navbar-submenu">
+              <li class="navbar-subitem"><a href="#">Offres postulées</a></li>
+              <li class="navbar-subitem"><a href="#">Wishlist</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Statistiques</a>
+            <ul class="navbar-submenu">
+              <li class="navbar-subitem"><a href="#">Profils</a></li>
+              <li class="navbar-subitem"><a href="#">Entreprises</a></li>
+              <li class="navbar-subitem"><a href="#">Stages</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Stages</a>
+            <ul class="navbar-submenu">
+              <li class="navbar-subitem"><a href="#">Modifier</a></li>
+              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
+              <li class="navbar-subitem"><a href="#">Créer</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Profils</a>
+            <ul class="navbar-submenu">
+              <li class="navbar-subitem"><a href="#">Modifier</a></li>
+              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
+              <li class="navbar-subitem"><a href="createProfile.html">Créer</a></li>
+            </ul>
+          </li>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Entreprises</a>
+            <ul class="navbar-submenu">
+              <li class="navbar-subitem"><a href="#">Modifier</a></li>
+              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
+              <li class="navbar-subitem"><a href="createCompany.html">Créer</a></li>
+            </ul>
+          </li>
+            <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="createCompany-main">
+      <h1>Création du profil entreprise</h1>
+        <hr class="rod"/>
+          <!-- action à implémenter -->
+          <form id="createCompany-form" action="" name="Company_form" method="post">
+            <div id="company_name_and_siren">
+              <div id="company_box">
+                <!-- Company_name -->
+                <label for="Company_name">Nom de l'entreprise</label>
+                <input
+                  type="text"
+                  name="Company_name"
+                  id="Company_ID_input"
+                  minlength="8"
+                  placeholder="8 caractères minimum"
+                  required/>
+              </div>
+              
+              <div id="siren_box">
+                <!-- Siren -->
+                <label for="Siren">Numéro de SIREN</label>
+                <input type="text" 
+                name="Siren" 
+                id="Surname_Input" 
+                placeholder="SIREN" 
+                required />
+              </div>
+            </div>
+          </form>
+          
+          <div class="createCompany">
+            <button id="but" type="button">Retour</button>
+            <button id="but" type="button">Valider</button>
+          </div>
+    </main>
+    <!-- Script -->
+    <script src="/js/js.js"></script>
+  </body>
+</html>
