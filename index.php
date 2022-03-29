@@ -89,20 +89,50 @@
   <main class="container">
 
     <div class="row research-box">
-      <form action="" class="research-form">
+      <form action="" method="get" class="research-form">
+
+        <!-- Domains -->
         <label for="domain-selector">Domaine :</label>
-        <input list="domains" class="research-input" placeholder="Choisissez un domaine ">
+        <input list="domains" name="domain" class="research-input" placeholder="Choisissez un domaine ">
+        <?php
+        $query = $conn->query("SELECT * FROM Activity_sector");
+        if($query === false){
+          var_dump($conn->errorInfo());
+          die('Erreur SQL');
+        }
+     
+        $posts = $query->fetchAll();?>
         <datalist id="domains">
-          <option value="BDD">
-          <option value="Réseau">
-          <option value="Systèmes embarqués">
+        <?php foreach($posts as $post): ?>
+            <option value="<?= htmlentities($post->Activity_sector_name)?>">
+        <?php endforeach ?>
         </datalist>
-        <input type="text" class="research-input" placeholder="...">
         <input type="submit" value="Rechercher" class="research-input research-button">
       </form>
     </div>
-
     <?php
+
+    $domain = $_GET['domain'];
+    
+    
+    if($domain == ''){
+      $queryCompletor = "SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
+      FROM Offer
+      LEFT JOIN office ON Offer.SIRET = Office.SIRET
+      LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
+      LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
+      LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
+      LEFT JOIN company ON office.SIREN = company.SIREN;";
+    }
+    else{
+      $queryCompletor ="SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
+    FROM Offer
+    LEFT JOIN office ON Offer.SIRET = Office.SIRET
+    LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
+    LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
+    LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
+    LEFT JOIN company ON office.SIREN = company.SIREN WHERE Activity_sector_name = '$domain';";
+    }
     
     $query = $conn->query("SELECT COUNT(*) AS COUNTER FROM Offer");
     if($query === false){
@@ -123,25 +153,21 @@
     <?php
 }
 $numberOffer = ($posts[0]->COUNTER);
-
     ?>
 
     <h2 id="offer-number"><?php echo($numberOffer) ?> offres disponibles :</h2>
     <hr>
     <?php
-    $query = $conn->query("SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
-    FROM Offer
-    LEFT JOIN office ON Offer.SIRET = Office.SIRET
-    LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
-    LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
-    LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
-    LEFT JOIN company ON office.SIREN = company.SIREN;");/*création de la requete*/
-            if($query === false){
-                var_dump($conn->errorInfo());
-                die('Erreur SQL');
-            }
-        $posts = $query->fetchAll();
+    $query = $conn->query($queryCompletor);
+
+    /*création de la requete*/
+      if($query === false){
+          var_dump($conn->errorInfo());
+          die('Erreur SQL');
+      }
+      $posts = $query->fetchAll();
     foreach($posts as $post): ?>
+
       <div class="row offer-box">
         <h3><?= htmlentities($post->Promotion_type)?> . <?=strtoupper(htmlentities($post->Company_name))?></h3>
         <article>
