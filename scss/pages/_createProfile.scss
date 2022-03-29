@@ -1,0 +1,61 @@
+@import '../settings/_variables';
+
+
+#createProfile-main{
+  h1{
+    margin-top: 80px;
+    text-align: center;
+  }
+  hr{
+    width: 50%;
+    margin-bottom: 50px;
+  }
+}
+
+#createProfile-body {
+  label {
+    font-size: 24px;
+  }
+}
+
+// Formulaire de création de profil
+#createProfile-form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 50px 0px 50px;
+
+  // Stylisme des inputs
+  input, select {
+    background-color: $background-color_input;
+    border-radius: 5px;
+    border-color: transparent;
+    height: $size_input;
+  }
+
+  select {
+    height: $size_input + 8;
+  }
+
+  label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    input, select{
+      width: 257px;
+      text-align: center;
+    }
+    
+  }
+  #login_and_password_box{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
