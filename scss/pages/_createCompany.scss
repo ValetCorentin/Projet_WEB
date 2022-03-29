@@ -1,0 +1,87 @@
+@import '../settings/_variables';
+@import '../settings/_mixins';
+
+#createCompany-main{
+  h1{
+    margin-top: 80px;
+    text-align: center;
+   }
+
+    #but {
+      background-color: #5a5a5a;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      align-items: center;
+      margin: 30px;
+
+      &:hover {
+        background-color: rgb(112, 107, 107);
+      }
+    }
+}
+
+#createCompany-body {
+  label {
+    font-size: 24px;
+  }
+
+  margin-bottom: 200px;
+}
+
+// Formulaire de crÃ©ation de profil //
+#createCompany-form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 50px 0px 50px;
+
+  // Stylisme des inputs //
+  input, select {
+    background-color: $background-color_input;
+    border-radius: 5px;
+    border-color: transparent;
+    height: $size_input;
+  }
+
+  select {
+    height: $size_input + 8;
+  }
+
+  label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    input, select{
+      width: 257px;
+      text-align: center;
+    }
+  }
+  #company_name_and_siren{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+} 
+
+.createCompany {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
