@@ -14,6 +14,20 @@
   </head>
   <body>
 
+    <!-- PHP -->
+    <?php
+      $servername = 'localhost';
+      $dbname = 'projet_web';
+      $username = 'root';
+      $password = '';
+
+      //Etablishing connexion
+      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password,[
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ /*PDO::FETCH_OBJ utile pour nettoyer le retour des queries*/
+      ]);
+    ?>
+
+
   <!-- Header with navbar -->
     <header>
       <nav class="navbar">
@@ -88,30 +102,55 @@
       </form>
     </div>
 
+    <?php
+    
+    $query = $conn->query("SELECT COUNT(*) AS COUNTER FROM Offer");
+    if($query === false){
+      var_dump($conn->errorInfo());
+      die('Erreur SQL');
+  }
 
-    <h2 id="offer-number">482 offres disponibles :</h2>
+  $posts = $query->fetchAll();
+
+  function debug($var){
+    ?>
+    <pre>
+    <?php
+    echo "Ma var: ".$var."<br>";
+    var_dump($var);
+    ?>
+    </pre>
+    <?php
+}
+$numberOffer = ($posts[0]->COUNTER);
+
+    ?>
+
+    <h2 id="offer-number"><?php echo($numberOffer) ?> offres disponibles :</h2>
     <hr>
+    <?php
+    $query = $conn->query("SELECT * FROM offer");/*création de la requete*/
+            if($query === false){
+                var_dump($conn->errorInfo());
+                die('Erreur SQL');
+            }
+        $posts = $query->fetchAll();
+    ?>
+    <?php foreach($posts as $post): ?>
+      <div class="row offer-box">
+      <h3><?= htmlentities($post->Promotion_type)?></h3>
+      <article>
+        <p>Informatique</p>
+        <p>Poitou-Charentes</p>
+        <p>Date de début : <?= htmlentities($post->Offer_date) ?></p>
+        <p><?= htmlentities($post->Duration) ?> mois</p>
+        <p>Salaire : <?= htmlentities($post->Salary) ?> €</p>
+        <img src="./images/heart_empty.png" alt="empty-heart" style="max-width: 28px;">
+      </article>
+      <p style="text-align: end;">Posté le <?= htmlentities($post->Offer_posting_date) ?></p>
+    </div>
 
-    <div class="row offer-box">
-      <h3>Devops full-stack back-end data . INTEL</h3>
-      <article>
-        <p>Informatique</p>
-        <p>Poitou-Charentes</p>
-        <p>4 mois</p>
-        <img src="./images/heart_empty.png" alt="empty-heart" style="max-width: 28px;">
-      </article>
-      <p style="text-align: end;">Aujourd'hui 10:04</p>
-    </div>
-    <div class="row offer-box">
-      <h3>Devops full-stack back-end data . INTEL</h3>
-      <article>
-        <p>Informatique</p>
-        <p>Poitou-Charentes</p>
-        <p>4 mois</p>
-        <img src="./images/heart_empty.png" alt="empty-heart" style="max-width: 28px;">
-      </article>
-      <p style="text-align: end;">Aujourd'hui 10:04</p>
-    </div>
+    <?php endforeach ?>
 
   </main>
 
