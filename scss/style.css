@@ -112,6 +112,81 @@
   border-color: black;
 }
 
+/* Color */
+/* Size */
+/* Padding */
+#createProfile-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#createProfile-main hr {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+#createProfile-body label {
+  font-size: 24px;
+}
+
+#createProfile-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 50px 0px 50px;
+}
+
+#createProfile-form input, #createProfile-form select {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+}
+
+#createProfile-form select {
+  height: 33px;
+}
+
+#createProfile-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#createProfile-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#createProfile-form div input, #createProfile-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#createProfile-form #login_and_password_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 /* IMPORT */
 /* Color */
 /* Size */
@@ -149,10 +224,8 @@
 }
 
 .navbar-logo {
-  position: absolute;
-  top: -24px;
-  left: 0%;
-  width: 100px;
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
 }
 
 .navbar-item a:hover::after {
@@ -341,6 +414,9 @@ HR {
 }
 
 footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: auto;
   width: 100vw;
   padding-top: 40px;

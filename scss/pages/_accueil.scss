@@ -1,72 +1,72 @@
 #offer-number {
-  text-align: center;
-}
-
-.research-box {
-  background-color: lightgrey;
-  box-shadow: 2px 5px 5px grey;
-  margin: 20px;
-  box-sizing: border-box;
-  .research-form {
+    text-align: center;
+  }
+  
+  .research-box {
+    background-color: lightgrey;
+    box-shadow: 2px 5px 5px grey;
+    margin: 20px;
+    box-sizing: border-box;
+    .research-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      .research-input {
+        border-radius: 6px;
+        border-color: black;
+        margin: 26px;
+      }
+      .research-button {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+  
+  .offer-box {
+    margin: 3%;
+    background-color: lightgrey;
+    box-shadow: 2px 5px 5px grey;
+    padding: 20px;
+    &:hover {
+      background-color: darken($color: lightgrey, $amount: 10);
+      box-shadow: 2px 8px 8px grey;
+    }
+  }
+  
+  #main-box {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    margin: 5% 30% 30% 25%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 16px;
+  }
+  
+  #authentification-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #spacing {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    .research-input {
-      border-radius: 6px;
-      border-color: black;
-      margin: 26px;
-    }
-    .research-button {
-      background-color: black;
-      color: white;
-    }
   }
-}
-
-.offer-box {
-  margin: 3%;
-  background-color: lightgrey;
-  box-shadow: 2px 5px 5px grey;
-  padding: 20px;
-  &:hover {
-    background-color: darken($color: lightgrey, $amount: 10);
-    box-shadow: 2px 8px 8px grey;
+  
+  #authentification-title {
+    align-self: center;
   }
-}
-
-#main-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lightgrey;
-  margin: 5% 30% 30% 25%;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-radius: 16px;
-}
-
-#authentification-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#spacing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#authentification-title {
-  align-self: center;
-}
-
-#connect-button {
-  width: 60%;
-  background-color: white;
-  border-radius: 4px;
-  border-color: black;
-}
+  
+  #connect-button {
+    width: 60%;
+    background-color: white;
+    border-radius: 4px;
+    border-color: black;
+  }
