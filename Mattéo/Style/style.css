@@ -20,7 +20,8 @@ form {
   flex-direction: column;
   margin: 30px 50px 0px 50px;
 }
-form input, form select {
+form input,
+form select {
   background-color: #e5e5e5;
   border-radius: 5px;
   border-color: transparent;
@@ -39,11 +40,17 @@ form div {
   text-align: center;
   align-items: center;
 }
-form div input, form div select {
+form div input,
+form div select {
   width: 257px;
   text-align: center;
 }
 form #login_and_password_box {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+form #Surname_Name_box {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
