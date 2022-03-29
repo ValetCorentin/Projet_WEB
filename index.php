@@ -101,7 +101,7 @@
         <p>Informatique</p>
         <p>Poitou-Charentes</p>
         <p>4 mois</p>
-        <img src="./assets/heart-regular.svg" alt="empty-heart" style="max-width: 28px;">
+        <img src="./images/heart-regular.svg" alt="empty-heart" style="max-width: 28px;">
       </article>
       <p style="text-align: end;">Aujourd'hui 10:04</p>
     </div>
@@ -111,7 +111,7 @@
         <p>Informatique</p>
         <p>Poitou-Charentes</p>
         <p>4 mois</p>
-        <img src="./assets/heart-regular.svg" alt="empty-heart" style="max-width: 28px;">
+        <img src="./images/heart-regular.svg" alt="empty-heart" style="max-width: 28px;">
       </article>
       <p style="text-align: end;">Aujourd'hui 10:04</p>
     </div>
