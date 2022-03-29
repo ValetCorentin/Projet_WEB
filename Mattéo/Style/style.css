@@ -56,5 +56,8 @@ form #Surname_Name_box {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+form #Delegate_rights {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */
