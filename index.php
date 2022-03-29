@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Meta tags -->
     <meta charset="utf-8">
@@ -112,7 +112,12 @@
     </div>
     <?php
 
-    $domain = $_GET['domain'];
+    $domain='';
+
+if(isset($_GET['domain'])){
+  $domain = $_GET['domain'];
+}
+    
     
     
     if($domain == ''){
@@ -141,21 +146,10 @@
   }
 
   $posts = $query->fetchAll();
-
-  function debug($var){
-    ?>
-    <pre>
-    <?php
-    echo "Ma var: ".$var."<br>";
-    var_dump($var);
-    ?>
-    </pre>
-    <?php
-}
-$numberOffer = ($posts[0]->COUNTER);
+  $numberOffer = ($posts[0]->COUNTER);
     ?>
 
-    <h2 id="offer-number"><?php echo($numberOffer) ?> offres disponibles :</h2>
+    <h2 id="offer-number"><?php echo($numberOffer) ?> offres disponibles sur le site !</h2>
     <hr>
     <?php
     $query = $conn->query($queryCompletor);
