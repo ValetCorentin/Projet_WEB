@@ -41,13 +41,19 @@
             if(isset($_POST["login"])){
               $userLogin = $_POST["login"];
               $userPassword = $_POST["password"];
-              //creating query
-              $query = $conn->query("SELECT * FROM contact WHERE Login='$userLogin' AND Password='$userPassword'");/*création de la requete*/
+
+              //creating prepared query
+              $query = $conn->prepare("SELECT * FROM contact WHERE Login=:login AND Password=:password");/*création de la requete*/
+              $query->bindParam(':login',$userLogin);
+              $query->bindParam(':password',$userPassword);
+
+              $query->execute();
 
               if($query === false){
                   var_dump($conn->errorInfo());
                   die('Erreur SQL');
               }
+
               $posts = $query->fetchAll();
 
               //checking if there is a result to the query and access to index.php
