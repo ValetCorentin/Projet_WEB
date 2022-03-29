@@ -6,7 +6,7 @@ $dbname = 'Projet_WEB';
 
 //Connection to the DB
 try{
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password,[PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
   // Debug connection
   echo "Connexion établie";
 }
