@@ -34,14 +34,16 @@ form label {
   margin-top: 20px;
   margin-bottom: 5px;
 }
-form .div-box-input, form .div-box {
+form .div-box-input,
+form .div-box {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
 }
 form .div-box-input input,
-form .div-box-input select, form .div-box input,
+form .div-box-input select,
+form .div-box input,
 form .div-box select {
   width: 257px;
   text-align: center;

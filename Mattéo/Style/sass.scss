@@ -45,7 +45,8 @@ form {
     margin-bottom: 5px;
   }
 
-  .div-box-input, .div-box  {
+  .div-box-input,
+  .div-box {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -66,8 +67,7 @@ form {
     @include box_disposition();
   }
 
-  #Delegate_rights{
-    display:none;
+  #Delegate_rights {
+    display: none;
   }
-
 }
