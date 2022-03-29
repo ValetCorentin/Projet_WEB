@@ -21,14 +21,14 @@
 
       <!-- action à implémenter -->
       <form action="" name="Profil_creation_form" method="post">
-        <div id="login_and_password_box">
-          <div id="Login_ID_box">
+        <div class="div-box" id="login_and_password_box">
+          <div class="div-box-input" id="Login_ID_box">
             <!-- Login ID -->
             <label for="Login_ID">Identifiant de connexion</label>
             <input type="text" name="Login_ID" id="Login_ID_Input" />
           </div>
 
-          <div id="Password_box">
+          <div class="div-box-input" id="Password_box">
             <!-- Password -->
             <label for="Login_Password">Mot de passe</label>
             <input
@@ -40,27 +40,27 @@
             />
           </div>
         </div>
-        <div id="Surname_Name_box">
-          <div id="Surname_box">
+        <div class="div-box" id="Surname_Name_box">
+          <div class="div-box-input" id="Surname_box">
             <!-- Surname -->
             <label for="Surname">Nom</label>
             <input type="text" name="Surname" id="Surname_Input" required />
           </div>
 
-          <div id="Name_box">
+          <div class="div-box-input" id="Name_box">
             <!-- Name -->
             <label for="Name">Prénom</label>
             <input type="text" name="Name" id="Name_Input" required />
           </div>
         </div>
 
-        <div id="E-mail_box">
+        <div class="div-box-input" id="E-mail_box">
           <!-- E-mail -->
           <label for="E-mail">E-mail</label>
           <input type="email" name="E-mail" id="E-mail_Input" required />
         </div>
 
-        <div id="Profile_type_box">
+        <div class="div-box-input" id="Profile_type_box">
           <!-- Profile type -->
           <label for="Profil_type">Type de profil</label>
           <select
@@ -77,31 +77,34 @@
           </select>
         </div>
 
-        <div id="Country_box">
+        <div class="div-box-input" id="Country_box">
           <label for="Country">Pays</label>
           <input type="text" name="Country" id="Country_Input" required />
         </div>
 
-        <div id="Region_box">
+        <div class="div-box-input" id="Region_box">
           <label for="Region">Région</label>
           <input type="text" name="Region" id="Region_Input" required />
         </div>
 
-        <div id="City_box">
-          <label for="City">Ville</label>
-          <input type="text" name="City" id="City_Input" required />
-        </div>
-
-        <div id="ZIP_Code_box">
+        <div class="div-box-input" id="ZIP_Code_box">
           <label for="ZIP_Code">Code Postal</label>
           <input type="text" name="ZIP_Code" id="ZIP_Code_Input" required />
         </div>
 
-        <div id="Address_box">
+        <div class="div-box-input" id="City_box">
+          <label for="City">Ville</label>
+          <input type="text" name="City" id="City_Input" required />
+        </div>
+
+        
+
+        <div class="div-box-input" id="Address_box">
           <label for="Address">Adresse</label>
           <input type="text" name="Address" id="Address_Input" required />
         </div>
       </form>
     </main>
+    <script src="./script_CreateProfile.js"></script>
   </body>
 </html>
