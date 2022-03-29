@@ -1,4 +1,4 @@
-/* NAVBAR */
+                                                      /* NAVBAR */
 
 const toggle = document.querySelector(".navbar-toggle");
 const menu = document.querySelector(".navbar-menu");

@@ -1,7 +1,3 @@
-* {
-  font-family: Roboto, sans-serif;
-}
-
 #offer-number {
   text-align: center;
 }
@@ -33,6 +29,7 @@
   margin: 3%;
   background-color: lightgrey;
   box-shadow: 2px 5px 5px grey;
+  padding: 20px;
   &:hover {
     background-color: darken($color: lightgrey, $amount: 10);
     box-shadow: 2px 8px 8px grey;
