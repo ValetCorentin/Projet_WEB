@@ -71,7 +71,7 @@
             required
           >
             <option value="" disabled selected>Choisissez un profil</option>
-            <option value="Administrator">Admnistrateur</option>
+            <option value="Administrator">Administrateur</option>
             <option value="Pilot">Pilote</option>
             <option value="Student">Étudiant</option>
             <option value="Delegate">Délégué</option>
@@ -327,6 +327,30 @@
           </div>
         </div>
 
+        <div class="div-box-input" id="Training_center_box">
+          <!-- Training center -->
+          <label for="Training_center">Centre de formation</label>
+          <input
+            type="text"
+            name="Training_center"
+            id="Training_center_Input"
+            disabled
+            required
+          />
+
+          <div class="div-box-input" id="Training_center_promotion_box">
+            <!-- Training center promotion -->
+            <label for="Training_center_promotion">Promotion de l'étudiant</label>
+            <input
+              type="text"
+              name="Training_center_promotion"
+              id="Training_center_promotion_Input"
+              disabled
+              required
+            />
+          </div>
+        </div>
+        
         <div class="div-box-input" id="Country_box">
           <!-- Country -->
           <label for="Country">Pays</label>
@@ -364,13 +388,24 @@
       </form>
     </main>
     <script src="./script_CreateProfile.js"></script>
+  </body>
+</html>
+
 
 <?php
 @require_once './DataBaseConnection.php';
 
+// Profile Creation Query
+$sql_query = "SELECT * FROM Training_center WHERE Training_center_ID = :id_training AND Training_center_name= :city_name";
+
+$query = $conn->prepare($sql_query, array(PDO::ATTR_CURSOR=>PDO::CURSOR_FWDONLY));
+
+$query->execute(array(':id_training'=>1, ':city_name'=>'ROUEN'));
+$results = $query->fetchAll();
+
+foreach ($results as $result){
+  echo "resultat: ".$result->Training_center_name;
+}
 
 
 ?>
-
-  </body>
-</html>

@@ -61,6 +61,9 @@ form #Surname_Name_box {
 form #Delegate_rights {
   display: none;
 }
+form #Training_center_box {
+  display: none;
+}
 form #button-submit_form {
   width: 100px;
   height: 30px;
