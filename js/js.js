@@ -5,6 +5,7 @@ const menu = document.querySelector(".navbar-menu");
 const items = document.querySelectorAll(".navbar-item");
 
 /* Toggle mobile menu */
+
 function toggleMenu() {
   if (menu.classList.contains("active")) {
     menu.classList.remove("active");
@@ -16,6 +17,7 @@ function toggleMenu() {
 }
 
 /* Activate Submenu */
+
 function toggleItem() {
   if (this.classList.contains("navbar-submenu-active")) {
     this.classList.remove("navbar-submenu-active");
@@ -28,6 +30,7 @@ function toggleItem() {
 }
 
 /* Close Submenu From Anywhere */
+
 function closeSubmenu(e) {
   if (menu.querySelector(".navbar-submenu-active")) {
     let isClickInside = menu

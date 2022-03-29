@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="fr">
-  <head>
+<head>
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Links -->
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -29,10 +29,10 @@
 
 
   <!-- Header with navbar -->
-    <header>
+  <header>
       <nav class="navbar">
         <ul class="navbar-menu">
-          <li class="navbar-logo"><a href="index.html">Chopes ton stage</a></li>
+          <li class="navbar-logo"><a href="home.html">Chopes ton stage</a></li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Rechercher</a>
             <ul class="navbar-submenu">
@@ -76,7 +76,7 @@
             <ul class="navbar-submenu">
               <li class="navbar-subitem"><a href="#">Modifier</a></li>
               <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="#">Créer</a></li>
+              <li class="navbar-subitem"><a href="createCompany.html">Créer</a></li>
             </ul>
           </li>
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
@@ -222,6 +222,6 @@ if(isset($_GET['domain'])){
   </footer>
 
     <!-- Script -->
-    <script src="/js/js.js"></script>
+    <script src="./js/js.js"></script>
   </body>
 </html>
