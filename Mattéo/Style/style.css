@@ -61,5 +61,14 @@ form #Surname_Name_box {
 form #Delegate_rights {
   display: none;
 }
+form #button-submit_form {
+  width: 100px;
+  height: 30px;
+  align-self: center;
+  justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
+}
 
 /*# sourceMappingURL=style.css.map */

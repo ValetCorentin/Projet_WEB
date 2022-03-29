@@ -37,6 +37,7 @@
               id="Login_Password_Input"
               minlength="8"
               placeholder="8 caractères minimum"
+              required
             />
           </div>
         </div>
@@ -327,29 +328,39 @@
         </div>
 
         <div class="div-box-input" id="Country_box">
+          <!-- Country -->
           <label for="Country">Pays</label>
           <input type="text" name="Country" id="Country_Input" required />
         </div>
 
         <div class="div-box-input" id="Region_box">
+          <!-- Region -->
           <label for="Region">Région</label>
           <input type="text" name="Region" id="Region_Input" required />
         </div>
 
         <div class="div-box-input" id="ZIP_Code_box">
+          <!-- ZIP_Code -->
           <label for="ZIP_Code">Code Postal</label>
           <input type="text" name="ZIP_Code" id="ZIP_Code_Input" required />
         </div>
 
         <div class="div-box-input" id="City_box">
+          <!-- City -->
           <label for="City">Ville</label>
           <input type="text" name="City" id="City_Input" required />
         </div>
 
         <div class="div-box-input" id="Address_box">
+          <!-- Address -->
           <label for="Address">Adresse</label>
           <input type="text" name="Address" id="Address_Input" required />
         </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="div-box-input" id="button-submit_form">
+          Créer
+        </button>
       </form>
     </main>
     <script src="./script_CreateProfile.js"></script>
