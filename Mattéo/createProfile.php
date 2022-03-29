@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chopes ton stage - Création de profil</title>
     <link rel="stylesheet" href="Style/style.css" />
+    <?php @require_once './DataBaseConnection.php'; ?>
   </head>
   <body>
     <header>
@@ -393,19 +394,21 @@
 
 
 <?php
-@require_once './DataBaseConnection.php';
+
+
+// $sql_query = "SELECT * FROM Training_center WHERE Training_center_ID = :id_training AND Training_center_name= :city_name";
+
+// $query = $conn->prepare($sql_query, array(PDO::ATTR_CURSOR=>PDO::CURSOR_FWDONLY));
+
+// $query->execute(array(':id_training'=>1, ':city_name'=>'ROUEN'));
+// $results = $query->fetchAll();
+
+// foreach ($results as $result){
+//   echo "resultat: ".$result->Training_center_name;
+// }
 
 // Profile Creation Query
-$sql_query = "SELECT * FROM Training_center WHERE Training_center_ID = :id_training AND Training_center_name= :city_name";
-
-$query = $conn->prepare($sql_query, array(PDO::ATTR_CURSOR=>PDO::CURSOR_FWDONLY));
-
-$query->execute(array(':id_training'=>1, ':city_name'=>'ROUEN'));
-$results = $query->fetchAll();
-
-foreach ($results as $result){
-  echo "resultat: ".$result->Training_center_name;
-}
-
+$sqlQuery = "INSERT INTO address VALUES ('NULL', ':Country_Input', ':City_Input', ':ZIP_Code_Input', ':Address_Input', ':Region_Input');
+INSERT INTO contact VALUES ('NULL', ':Name_Input', ':Surname_Input', ':Login_Input', ':Password_Input', ':E-mail_Input', ':Profile_type_Input', (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = ':Training_center_name_Input';));"
 
 ?>
