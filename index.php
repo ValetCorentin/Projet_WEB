@@ -105,12 +105,17 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
+                echo('<li class="navbar-subitem"><a href="createCompany.php">Créer</a></li>');
                 };?>
             </ul>
           </li>
+          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            
         </ul>
+        
+        
       </nav>
     </header>
 
@@ -254,5 +259,7 @@ if(isset($_GET['domain'])){
 
     <!-- Script -->
     <script src="./js/js.js"></script>
+    <script src="./js/disconnect.js"></script>
+
   </body>
 </html>

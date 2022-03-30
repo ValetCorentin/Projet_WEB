@@ -31,8 +31,8 @@
     ?>
 
 
- <!-- Header with navbar -->
- <header>
+<!-- Header with navbar -->
+<header>
       <nav class="navbar">
         <ul class="navbar-menu">
           <li class="navbar-logo"><a href="index.php">Chopes ton stage</a></li>
@@ -104,12 +104,17 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
+                echo('<li class="navbar-subitem"><a href="createCompany.php">Créer</a></li>');
                 };?>
             </ul>
           </li>
+          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            
         </ul>
+        
+        
       </nav>
     </header>
 

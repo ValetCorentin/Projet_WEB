@@ -69,6 +69,7 @@ session_start();
 
                 //checking if there is a result to the query and access to index.php
                 if (isset($posts[0])) {
+                    header("LOCATION: http://localhost/Projet_WEB/index.php");
 
                     echo ('<p>Bon mdp/login</p>');
                     try {
@@ -99,27 +100,13 @@ session_start();
                     // Storing cookies
                     setcookie('user_profil', $data, time() + 3600);
 
-                    //Delete Cookies
-                    // if (isset($_COOKIE['user_profil'])) {
-                    //     unset($_COOKIE['user_profil']);
-                    //     setcookie("user_profil", "", time() - 3600);;
-                    //     return true;
-                    // } else {
-                    //     return false;
-                    // }
 
-                    //Display cookie
-                    $data = json_decode($_COOKIE['user_profil'], true);
-                    echo json_encode($data);
-                    header("LOCATION: http://localhost/Projet_WEB/index.php");
-                    // https://www.codegrepper.com/code-examples/php/php+cookies+data+showing+json+data
                 } else {
                     echo ('<p>Erreur dans le login et/ou le mot de passe, réessayez.</p>');
                 }
             } else {
                 echo 'Renseignez les champs si dessus pour vous identifier.';
             }
-
 
             ?>
         </div>

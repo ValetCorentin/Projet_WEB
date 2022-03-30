@@ -184,6 +184,131 @@
 /* Color */
 /* Size */
 /* Padding */
+#createCompany-main {
+  text-decoration: none;
+}
+
+#createCompany-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#createCompany-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#createCompany-main #but:hover {
+  background-color: #706b6b;
+}
+
+#createCompany-body {
+  margin-bottom: 200px;
+}
+
+#createCompany-body label {
+  font-size: 24px;
+}
+
+#createCompany-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#createCompany-form input, #createCompany-form select {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+  text-align: center;
+}
+
+#createCompany-form select {
+  height: 33px;
+}
+
+#createCompany-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#createCompany-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#createCompany-form div input, #createCompany-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#createCompany-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.createCompany {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Color */
+/* Size */
+/* Padding */
 /* GLOBAL */
 * {
   margin: 0;
