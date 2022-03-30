@@ -184,7 +184,7 @@
         <div class="div-box-input" id="Training_center_promotion_box">
           <!-- Training center promotion -->
           <label for="Training_center_promotion">Promotion de l'étudiant</label>
-          <input type="text" name="Training_center_promotion" class="student_form_properties" id="Training_center_promotion_Input" required />
+          <input type="text" name="Training_center_promotion" class="student_form_properties" id="Training_center_promotion_Input"  />
         </div>
       </div>
 

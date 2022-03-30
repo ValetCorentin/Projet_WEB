@@ -26,9 +26,8 @@ function hide_rights() {
 
 const training_center_box = document.getElementById("Training_center_box");
 function show_training_center() {
-
   for (var i = 0; i < 2 ; i++){
-    document.getElementsByClassName('student_form_properties')[i].disabled = true;
+    document.getElementsByClassName('student_form_properties')[i].disabled = false;
   }
   training_center_box.style.display = "inline";
 }
@@ -46,15 +45,10 @@ document.getElementById("Profil_type_Input").onclick = function () {
     hide_training_center();
     show_rights();
 
-  } else if (document.getElementById("Profil_type_Input").value == "Student") {
+  }  else {
 
     hide_rights();
     show_training_center();
-
-  } else {
-
-    hide_training_center();
-    hide_rights();
 
   }
 };
