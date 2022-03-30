@@ -88,7 +88,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
               <?php if($data['Del_student']==1 || $data['Del_representative']==1 || $data['Del_pilot']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppProfile.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_student']==1 || $data['Create_representative']==1 || $data['Create_pilot']==1){ 
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');

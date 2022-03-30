@@ -184,10 +184,6 @@
 /* Color */
 /* Size */
 /* Padding */
-#createCompany-main {
-  text-decoration: none;
-}
-
 #createCompany-main h1 {
   margin-top: 80px;
   text-align: center;
@@ -196,36 +192,17 @@
 #createCompany-main #but {
   background-color: #5a5a5a;
   border-radius: 8px;
-  border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 40px;
-  text-decoration: none;
+  margin-top: 16px;
 }
 
 #createCompany-main #but:hover {
   background-color: #706b6b;
-}
-
-#createCompany-body {
-  margin-bottom: 200px;
 }
 
 #createCompany-body label {
@@ -242,7 +219,8 @@
           flex-direction: column;
 }
 
-#createCompany-form input, #createCompany-form select {
+#createCompany-form input,
+#createCompany-form select {
   background-color: #e5e5e5;
   border-radius: 5px;
   border-color: transparent;
@@ -273,7 +251,8 @@
           align-items: center;
 }
 
-#createCompany-form div input, #createCompany-form div select {
+#createCompany-form div input,
+#createCompany-form div select {
   width: 257px;
   text-align: center;
 }
@@ -290,7 +269,123 @@
           justify-content: space-evenly;
 }
 
-.createCompany {
+#suppprofile-main {
+  text-decoration: none;
+}
+
+#suppprofile-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#suppprofile-main .recherche {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#suppprofile-main .form {
+  margin-bottom: 50px;
+}
+
+#suppprofile-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#suppprofile-main #but:hover {
+  background-color: #706b6b;
+}
+
+#suppprofile-body {
+  margin-bottom: 200px;
+}
+
+#suppprofile-body label {
+  font-size: 24px;
+}
+
+#suppprofile-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suppprofile-form input, #suppprofile-form select {
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#suppprofile-form select {
+  height: 25px;
+}
+
+#suppprofile-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#suppprofile-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suppprofile-form div input, #suppprofile-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#suppprofile-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.suppprofile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
