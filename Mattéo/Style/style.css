@@ -62,7 +62,7 @@ form #Delegate_rights {
   display: none;
 }
 form #Training_center_box {
-  display: none;
+  display: inline;
 }
 form #button-submit_form {
   width: 100px;

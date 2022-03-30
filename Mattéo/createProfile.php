@@ -179,12 +179,12 @@
       <div class="div-box-input" id="Training_center_box">
         <!-- Training center -->
         <label for="Training_center">Centre de formation</label>
-        <input type="text" name="Training_center" class="student_form_properties" id="Training_center_Input" required disabled />
+        <input type="text" name="Training_center" class="student_form_properties" id="Training_center_Input" required />
 
         <div class="div-box-input" id="Training_center_promotion_box">
           <!-- Training center promotion -->
           <label for="Training_center_promotion">Promotion de l'étudiant</label>
-          <input type="text" name="Training_center_promotion" class="student_form_properties" id="Training_center_promotion_Input"  />
+          <input type="text" name="Training_center_promotion" class="student_form_properties" id="Training_center_promotion_Input" placeholder="Obligatoire si étudiant" />
         </div>
       </div>
 
@@ -243,7 +243,6 @@ if (isset($_POST["Login_ID"])) {
   $Profile_type_Input = $_POST["Profile_type"];
 
   $Training_center_name_Input = $_POST["Training_center"];
-  $Promotion_name_Input = $_POST["Training_center_promotion"];
 
   $Country_Input = $_POST["Country"];
   $Region_Input = $_POST["Region"];
@@ -251,16 +250,21 @@ if (isset($_POST["Login_ID"])) {
   $City_Input = $_POST["City"];
   $Address_Input = $_POST["Address"];
 
-  if ($Profile_type_Input === 'Administrator') {
+  if ($Profile_type_Input === 'Administrator' || $Profile_type_Input === 'Pilot') {
 
-    // Creation query to create an admin profile
+    // Creation query to create an admin or pilot profile
+    $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
+    INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));";
 
-  } else if ($Profile_type_Input === 'Pilot') {
 
-    // Creation query to create a pilot profile
 
+    // Preparing the query then sending it to the database
+    $recipeStatement = $conn->prepare($sqlQuery);
+    $recipeStatement->execute(array('Country_Input' => $Country_Input, 'City_Input' => $City_Input, 'ZIP_Code_Input' => $ZIP_Code_Input, 'Address_Input' => $Address_Input, 'Region_Input' => $Region_Input, 'Name_Input' => $Name_Input, 'Surname_Input' => $Surname_Input, 'Login_Input' => $Login_Input, 'Password_Input' => $Password_Input, 'E_mail_Input' => $E_mail_Input, 'Profile_type_Input' => $Profile_type_Input, 'Training_center_name_Input' => $Training_center_name_Input));
+    
   } else if ($Profile_type_Input === 'Student') {
 
+    $Promotion_name_Input = $_POST["Training_center_promotion"];
     // Creation query to create a student profile
 
     // Promotion_name existance query
@@ -279,7 +283,6 @@ INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :
 INSERT INTO promotion VALUES ('NULL', :Promotion_name_Input);
 INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
 INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input));";
-
     } else if (($recipes->Total) > 0) {
 
       // Query used to create a student if his promotion has been created
@@ -287,12 +290,11 @@ INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WH
 INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
 INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
 INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input));";
-
     }
 
     // Preparing the query then sending it to the database
     $recipeStatement = $conn->prepare($sqlQuery);
-    $recipeStatement->execute(array('Country_Input' => $Country_Input, 'City_Input' => $City_Input, 'ZIP_Code_Input' => $ZIP_Code_Input, 'Address_Input' => $Address_Input, 'Region_Input' => $Region_Input, 'Name_Input' => $Name_Input, 'Surname_Input' => $Surname_Input, 'Login_Input' => $Login_Input, 'Password_Input' => $Password_Input, 'E_mail_Input' => $E_mail_Input, 'Profile_type_Input' => $Profile_type_Input, 'Training_center_name_Input' => $Training_center_name_Input ,'Promotion_name_Input' => $Promotion_name_Input));
+    $recipeStatement->execute(array('Country_Input' => $Country_Input, 'City_Input' => $City_Input, 'ZIP_Code_Input' => $ZIP_Code_Input, 'Address_Input' => $Address_Input, 'Region_Input' => $Region_Input, 'Name_Input' => $Name_Input, 'Surname_Input' => $Surname_Input, 'Login_Input' => $Login_Input, 'Password_Input' => $Password_Input, 'E_mail_Input' => $E_mail_Input, 'Profile_type_Input' => $Profile_type_Input, 'Training_center_name_Input' => $Training_center_name_Input, 'Promotion_name_Input' => $Promotion_name_Input));
 
   } else if ($Profile_type_Input === 'Delegate') {
 
