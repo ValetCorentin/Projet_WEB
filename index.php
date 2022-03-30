@@ -43,7 +43,7 @@
           <li class="navbar-item has-submenu">
             <a tabindex="0">Favoris</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Offres postulées</a></li>
+              <li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>
               <li class="navbar-subitem"><a href="#">Wishlist</a></li>
             </ul>
           </li>
