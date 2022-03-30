@@ -1,38 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Links -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chopes ton stage</title>
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
+</head>
+<body>
+  <?php $data = json_decode($_COOKIE['user_profil'], true); ?>
 
-    <title>Chopes ton stage</title>
-  </head>
-  <body>
-
-    <!-- PHP -->
-    <?php
-      $servername = 'localhost';
-      $dbname = 'projet_web';
-      $username = 'root';
-      $password = '';
-
-      //Etablishing connexion
-      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password,[
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ /*PDO::FETCH_OBJ utile pour nettoyer le retour des queries*/
-      ]);
-
-      $data = json_decode($_COOKIE['user_profil'], true);
-
-    ?>
-    
-
-
-  <!-- Header with navbar -->
   <header>
       <nav class="navbar">
         <ul class="navbar-menu">
@@ -88,7 +67,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
               <?php if($data['Del_student']==1 || $data['Del_representative']==1 || $data['Del_pilot']==1){ 
-                echo('<li class="navbar-subitem"><a href="listSuppProfile.php">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_student']==1 || $data['Create_representative']==1 || $data['Create_pilot']==1){ 
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
@@ -102,121 +81,77 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
                 <?php if($data['Del_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="listSuppCompany.php">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="createCompany.php">Créer</a></li>');
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
-
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-            
         </ul>
-        
-        
       </nav>
     </header>
 
-    <!-- Main -->
-
-  <main class="container">
-
-    <div class="row research-box">
-      <form action="" method="get" class="research-form">
-
-        <!-- Domains -->
-        <label for="domain-selector">Domaine :</label>
-        <input list="domains" name="domain" class="research-input" placeholder="Choisissez un domaine ">
-        <?php
-        $query = $conn->query("SELECT * FROM Activity_sector");
-        if($query === false){
-          var_dump($conn->errorInfo());
-          die('Erreur SQL');
-        }
-     
-        $posts = $query->fetchAll();?>
-        <datalist id="domains">
-        <?php foreach($posts as $post): ?>
-            <option value="<?= htmlentities($post->Activity_sector_name)?>">
-        <?php endforeach ?>
-        </datalist>
-        <input type="submit" value="Rechercher" class="research-input research-button">
-      </form>
+    <div id="logo-cesi">
+        <div style="position:absolute;z-index:1">
+           <img src="logo-cesi.jpg">
+        </div>
     </div>
-    <?php
+    <p>
+        <h1>A propos de nous :</h1>
+    </p>
+	  
+	<p>
+    <h2>
+		Qui sommes nous ?
+    </h2>    
+    <h2>
+		Nous sommes une petite équipe de 5 développeurs web étudiant à CESI et nous avons décidé de créer ce site.
+	</h2>
+    </p>
 
-    $domain='';
+    <div id="campus">
+        <div style="position:absolute;z-index: 1;">
+           <img src="campus-cesi.jpg">
+        </div>
+    </div>
 
-if(isset($_GET['domain'])){
-  $domain = $_GET['domain'];
-}
-    
-    
-    
-    if($domain == ''){
-      $queryCompletor = "SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
-      FROM Offer
-      LEFT JOIN office ON Offer.SIRET = Office.SIRET
-      LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
-      LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
-      LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
-      LEFT JOIN company ON office.SIREN = company.SIREN;";
-    }
-    else{
-      $queryCompletor ="SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
-    FROM Offer
-    LEFT JOIN office ON Offer.SIRET = Office.SIRET
-    LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
-    LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
-    LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
-    LEFT JOIN company ON office.SIREN = company.SIREN WHERE Activity_sector_name = '$domain';";
-    }
-    
-    $query = $conn->query("SELECT COUNT(*) AS COUNTER FROM Offer");
-    if($query === false){
-      var_dump($conn->errorInfo());
-      die('Erreur SQL');
-  }
+    <p>
+        <h2>	
+            Pourquoi faisons nous ça ?
+        </h2>    
+        <h2>
+            Frustré de nos expériences personnel avec les autres site internet qui relayaient les offres de stage, souvent imprécise, parfois avec des offres en doublon ou pire de fausses offres.
+            Nous avons donc décider de créer ce site où notre objectif sera de répertorier le plus d’offre possible et précise, sans doublons et avec toute les information que l’utilisateur aurai besoin.
+        </h2>
+    </p>
 
-  $posts = $query->fetchAll();
-  $numberOffer = ($posts[0]->COUNTER);
-    ?>
+    <P>
+        <h2>	
+            Nos objectifs
+        </h2>    
+        <h2>
+            Notre objectif principale et la transparence ! toutes les offres seront étudié pour leur fiabilité avant d’être poster sur “Chopes ton stage !”
+        </h2>
+    </P>
+	
+    <div id="livre">
+        <div style="position:absolute;z-index:1">
+           <img src="livre.png">
+        </div>
+    </div>
+    <p> 
+    <h2>	
+		Nos espoirs
+    </h2>    
+    <h2>
+		Notre espoirs avec ce site c’est d’aider les particulier dans leur recherche de stage pour que ces derniers puissent acquérir les bonnes connaissances pour avoir le métier de leur rêves!
+	</h2>
+    </p>
 
-    <h2 id="offer-number"><?php echo($numberOffer) ?> offres disponibles sur le site !</h2>
-    <hr>
-    <?php
-        /*creating query*/
-    $query = $conn->query($queryCompletor);
-
-      if($query === false){
-          var_dump($conn->errorInfo());
-          die('Erreur SQL');
-      }
-      $posts = $query->fetchAll();
-    foreach($posts as $post): ?>
-
-      <div class="row offer-box">
-        <h3><?= htmlentities($post->Promotion_type)?> . <?=strtoupper(htmlentities($post->Company_name))?></h3>
-        <article>
-          <p><?= ucfirst(htmlentities($post->Activity_sector_name)) ?></p>
-          <p><?= strtoupper(htmlentities($post->Country)) ?> <?= htmlentities($post->Region) ?> <?= htmlentities($post->Zip_code) ?> <?= htmlentities($post->City) ?> </p>
-          <p>Date de début : <?= htmlentities($post->Offer_date) ?></p>
-          <p>Durée : <?= htmlentities($post->Duration) ?> mois</p>
-          <p>Salaire : <?= htmlentities($post->Salary) ?> €</p>
-          <p>Note de confiance des tuteurs : <?= htmlentities($post->Offer_grade) ?> /5</p>
-          <img src="./images/heart_empty.png" alt="empty-heart" style="max-width: 28px;">
-        </article>
-        <p style="text-align: end;">Posté le <?= htmlentities($post->Offer_posting_date) ?></p>
-      </div>
-
-    <?php endforeach ?>
-
-  </main>
-
-                                        <!-- Footer -->
-    <footer>
+                                          <!-- Footer -->
+                                          <footer>
       <div class="footer-trait" id="footer-center-things">
           <HR ALIGN=CENTER WIDTH="800">
       </div>
@@ -259,6 +194,5 @@ if(isset($_GET['domain'])){
 
     <!-- Script -->
     <script src="./js/js.js"></script>
-
-  </body>
+</body>
 </html>

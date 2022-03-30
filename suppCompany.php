@@ -5,9 +5,9 @@
         <meta charset="utf-8">
 
         <link rel="stylesheet" href="scss/style.css">
+
     </head>
     <body>
-
         <!-- Connexion à la base de donnée -->
             <?php
                 $hostname = 'localhost';
@@ -29,13 +29,13 @@
                 }
 
                 // On récupère l'ID du profil à supprimer
-                $ID = $_GET['name_id'];
-                $sqlQuery = "DELETE FROM contact WHERE Contact_ID = '$ID'";
+                $SIREN = $_GET['name_id'];
+                $sqlQuery = "DELETE FROM company WHERE SIREN = '$SIREN'";
                 $recipesStatement = $connexion->prepare($sqlQuery);
                 $recipesStatement->execute();
                 $recipes = $recipesStatement->fetchAll();?>
-                <h2 style="text-align:center;">Suppression effectuée</h2>
-                <a href="listSuppProfile.php">Retour aux profils</a>
+                <p>Suppression effectuée</p>
+                <a href="listSuppCompany.php">Retour aux Entreprises</a>
                 
     </body>
 </html>

@@ -14,8 +14,6 @@
   <title>Chopes ton stage</title>
 </head>
 
-
-
  <!-- Connexion à la base de donnée -->
  <?php
                 $hostname = 'localhost';
@@ -35,10 +33,12 @@
                 catch(PDOException $e){
                 echo "Erreur : " . $e->getMessage();
                 }
+
                 $data = json_decode($_COOKIE['user_profil'], true);
+
                 ?>
 
-<body id="suppprofile-body">
+<body id="suppCompany-body">
   <!-- Header with navbar -->
   <header>
       <nav class="navbar">
@@ -109,7 +109,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
                 <?php if($data['Del_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppCompany.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_company']==1){ 
                 echo('<li class="navbar-subitem"><a href="createCompany.php">Créer</a></li>');
@@ -127,9 +127,9 @@
     </header>
   
   <!-- Main -->
-  <main id="suppprofile-main">
+  <main id="suppCompany-main">
 
-    <h1>Profils</h1>
+    <h1>Entreprises</h1>
       <div class="recherche">
         <div class="form">
 
@@ -138,9 +138,9 @@
     <!-- action à implémenter -->
     <form action="" method="get" class="research-form">
 
-        <!-- name -->
-        <label for="name-selector">Nom/Prénom :</label>
-        <input list="name" name="name" class="research-input" placeholder="Prénom/NOM">
+        <!-- Company -->
+        <label for="name-selector">Entreprise/SIREN :</label>
+        <input list="name" name="name" class="research-input" placeholder="exemple : cesi">
 
         
         <input type="submit" value="Rechercher" class="research-input research-button">
@@ -151,7 +151,7 @@
         if(isset($_GET['name'])){
           $name = $_GET['name'];
           
-          $query = $connexion->query("SELECT * FROM contact WHERE First_name = '$name' or Last_name = '$name'");
+          $query = $connexion->query("SELECT * FROM company WHERE Company_name = '$name' or SIREN = '$name'");
           if($query === false){
             var_dump($connexion->errorInfo());
             die('Erreur SQL');
@@ -159,12 +159,12 @@
           $posts = $query->fetchAll();
           foreach ($posts as $post) {
                 ?>
-                <p><?php echo $post['First_name'];?> <?php echo $post['Last_name'];?> - <a href="suppProfile.php?name_id=<?= $post['Contact_ID']; ?>">Supprimer</a></p>
+                <p><?php echo $post['Company_name'];?> <?php echo $post['SIREN'];?> - <a href="suppcompany.php?name_id=<?= $post['SIREN']; ?>">Supprimer</a></p>
                 <?php
                 }
         }else{ 
           
-                $sqlQuery = 'SELECT * FROM contact';
+                $sqlQuery = 'SELECT * FROM company';
                 $recipesStatement = $connexion->prepare($sqlQuery);
                 $recipesStatement->execute();
                 $recipes = $recipesStatement->fetchAll();
@@ -173,13 +173,20 @@
                 foreach ($recipes as $recipe) {
                 ?>
                 
-                <p><?php echo $recipe['First_name'];?> <?php echo $recipe['Last_name'];?> - <a href="suppProfile.php?name_id=<?= $recipe['Contact_ID']; ?>">Supprimer</a></p>
+                <p><?php echo $recipe['Company_name'];?> <?php echo $recipe['SIREN'];?> - <a href="suppcompany.php?name_id=<?= $recipe['SIREN']; ?>">Supprimer</a></p>
                 <?php
                 }
                 ?>
         <?php
             } ?>
             </div>
+
+      
+      
+
+
+      
+      
   </main>
   <!-- Script -->
   <script src="js/js.js"></script>
