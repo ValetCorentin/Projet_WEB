@@ -59,7 +59,7 @@ form #Surname_Name_box {
   justify-content: space-evenly;
 }
 form #Delegate_rights {
-  display: always;
+  display: none;
 }
 form #Training_center_box {
   display: none;
