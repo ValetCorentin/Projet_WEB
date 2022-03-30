@@ -251,7 +251,6 @@ if (isset($_POST["Login_ID"])) {
   $City_Input = $_POST["City"];
   $Address_Input = $_POST["Address"];
 
-  var_dump($_POST);
   if ($Profile_type_Input === 'Administrator') {
 
     // Creation query to create an admin profile
@@ -278,16 +277,16 @@ if (isset($_POST["Login_ID"])) {
       $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
 INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
 INSERT INTO promotion VALUES ('NULL', :Promotion_name_Input);
-INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
-INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input));";
+INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
+INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input));";
 
     } else if (($recipes->Total) > 0) {
 
       // Query used to create a student if his promotion has been created
       $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
 INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
-INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
-INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input));";
+INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
+INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_name = :Promotion_name_Input));";
 
     }
 
