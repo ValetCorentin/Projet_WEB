@@ -25,7 +25,11 @@
       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password,[
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ /*PDO::FETCH_OBJ utile pour nettoyer le retour des queries*/
       ]);
+
+      $data = json_decode($_COOKIE['user_profil'], true);
+
     ?>
+    
 
 
   <!-- Header with navbar -->
@@ -36,47 +40,73 @@
           <li class="navbar-item has-submenu">
             <a tabindex="0">Rechercher</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="index.php">Stages</a></li>
-              <li class="navbar-subitem"><a href="companyPage.php">Entreprises</a></li>
+            <?php if($data['LF_offer']==1){ 
+                echo('<li class="navbar-subitem"><a href="index.php">Stages</a></li>');
+                };?>
+                <?php if($data['LF_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="companyPage.php">Entreprises</a></li>');
+                };?>
             </ul>
           </li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Favoris</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>
-              <li class="navbar-subitem"><a href="#">Wishlist</a></li>
+              <?php if($data['To_apply']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>');
+                };?>
+              <?php if($data['Add_to_wishlist']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Wishlist</a></li>');
+                };?>
             </ul>
           </li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Statistiques</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Profils</a></li>
-              <li class="navbar-subitem"><a href="#">Entreprises</a></li>
-              <li class="navbar-subitem"><a href="#">Stages</a></li>
+              <li class="navbar-subitem"><a href="commingSoonPage.html">Profils</a></li>
+              <li class="navbar-subitem"><a href="commingSoonPage.html">Entreprises</a></li>
+              <li class="navbar-subitem"><a href="commingSoonPage.html">Stages</a></li>
             </ul>
           </li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Stages</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Modifier</a></li>
-              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="#">Créer</a></li>
+              <?php if($data['Modif_offer']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+              <?php if($data['Del_offer']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_offer']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
+                };?>
             </ul>
           </li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Profils</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Modifier</a></li>
-              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="createProfile.html">Créer</a></li>
+              <?php if($data['Modif_student']==1 || $data['Modif_representative']==1 || $data['Modif_pilot']==1) { 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+              <?php if($data['Del_student']==1 || $data['Del_representative']==1 || $data['Del_pilot']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_student']==1 || $data['Create_representative']==1 || $data['Create_pilot']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
+                };?>
             </ul>
           </li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Entreprises</a>
             <ul class="navbar-submenu">
-              <li class="navbar-subitem"><a href="#">Modifier</a></li>
-              <li class="navbar-subitem"><a href="#">Supprimer</a></li>
-              <li class="navbar-subitem"><a href="createCompany.html">Créer</a></li>
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
+                };?>
             </ul>
           </li>
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
@@ -152,9 +182,9 @@ if(isset($_GET['domain'])){
     <h2 id="offer-number"><?php echo($numberOffer) ?> offres disponibles sur le site !</h2>
     <hr>
     <?php
+        /*creating query*/
     $query = $conn->query($queryCompletor);
 
-    /*création de la requete*/
       if($query === false){
           var_dump($conn->errorInfo());
           die('Erreur SQL');
@@ -220,6 +250,7 @@ if(isset($_GET['domain'])){
           <p id="footer-center-things">Mentions Légales - <a id="footer-apropos" href="#">A propos de nous</a></p>
       </div>
   </footer>
+  
 
     <!-- Script -->
     <script src="./js/js.js"></script>
