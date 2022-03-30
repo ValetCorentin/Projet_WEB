@@ -25,12 +25,10 @@ function hide_rights() {
 }
 
 function show_training_center() {
-  document.getElementById("Training_center_Input").disabled = false;
   document.getElementById("Training_center_box").style.display = "inline";
 }
 
 function hide_training_center(){
-  document.getElementById("Training_center_Input").disabled = true;
   document.getElementById("Training_center_box").style.display = "none";
 }
 
