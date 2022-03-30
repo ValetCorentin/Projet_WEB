@@ -81,7 +81,7 @@ session_start();
                     }
 
                     $query = $conn->prepare(
-                        "SELECT First_name, Last_name, Login, Status.Status_name,
+                        "SELECT Contact_ID, First_name, Last_name, Login, Status.Status_name,
                         Permissions.Add_to_wishlist, Permissions.Assign_right, 
                         Permissions.Create_company, Permissions.Create_offer, Permissions.Create_pilot, Permissions.Create_representative, Permissions.Create_student, Permissions.Del_company, Permissions.Del_offer, Permissions.Del_pilot, Permissions.Del_representative, Permissions.Del_student, Permissions.Del_from_wishlist, Permissions.Evaluate_company, Permissions.LF_company, Permissions.LF_offer, Permissions.LF_pilot, Permissions.LF_representative, Permissions.LF_student, Permissions.Modif_company, Permissions.Modif_offer, Permissions.Modif_pilot, Permissions.Modif_representative, Permissions.Modif_student, Permissions.Stat_check_company, Permissions.Stat_check_offer, Permissions.Stat_check_student, Permissions.To_apply
                         FROM contact 

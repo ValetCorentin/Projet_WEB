@@ -55,7 +55,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>');
                 };?>
               <?php if($data['Add_to_wishlist']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Wishlist</a></li>');
+                echo('<li class="navbar-subitem"><a href="wishlistPage.php">Wishlist</a></li>');
                 };?>
             </ul>
           </li>
@@ -74,7 +74,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
               <?php if($data['Del_offer']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppOffer.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_offer']==1){ 
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
@@ -144,6 +144,31 @@
         </datalist>
         <input type="submit" value="Rechercher" class="research-input research-button">
       </form>
+
+      <form action="" method="get" class="research-form">
+        <!-- Add to wishlist -->
+        <label for="domain-selector">ID de l'offre à ajouter dans la wishlist :</label>
+        <input type="number" name="IDToWhishlist" class="research-input" placeholder="Entrez l'ID">
+        <input type="submit" value="Ajouter" class="research-input research-button">
+      </form>
+
+<?php
+      if (isset($_GET["IDToWhishlist"])) {
+        $IDToWhishlist = $_GET["IDToWhishlist"];
+        //creating prepared query
+        $query = $conn->prepare("INSERT INTO whishs (Offer_ID, Contact_ID) VALUES (:Offer_ID,:Contact_ID)");/*création de la requete*/
+        $query->bindParam(':Offer_ID', $IDToWhishlist);
+        $query->bindParam(':Contact_ID', $data['Contact_ID']);
+
+        $query->execute();
+
+        if ($query === false) {
+            var_dump($conn->errorInfo());
+            die('Erreur SQL');
+        }
+      }
+  ?>
+      
     </div>
     <?php
 
@@ -195,10 +220,12 @@ if(isset($_GET['domain'])){
           die('Erreur SQL');
       }
       $posts = $query->fetchAll();
+      $incrementOffer = 0;
     foreach($posts as $post): ?>
-
-      <div class="row offer-box">
+      <?php $incrementOffer += 1; ?>
+      <div class="row offer-box" id="Offer-<?php echo($incrementOffer) ?>">
         <h3><?= htmlentities($post->Promotion_type)?> . <?=strtoupper(htmlentities($post->Company_name))?></h3>
+        <strong>ID de l'offre : <?= htmlentities($post->Offer_ID) ?></strong>
         <article>
           <p><?= ucfirst(htmlentities($post->Activity_sector_name)) ?></p>
           <p><?= strtoupper(htmlentities($post->Country)) ?> <?= htmlentities($post->Region) ?> <?= htmlentities($post->Zip_code) ?> <?= htmlentities($post->City) ?> </p>
@@ -206,7 +233,6 @@ if(isset($_GET['domain'])){
           <p>Durée : <?= htmlentities($post->Duration) ?> mois</p>
           <p>Salaire : <?= htmlentities($post->Salary) ?> €</p>
           <p>Note de confiance des tuteurs : <?= htmlentities($post->Offer_grade) ?> /5</p>
-          <img src="./images/heart_empty.png" alt="empty-heart" style="max-width: 28px;">
         </article>
         <p style="text-align: end;">Posté le <?= htmlentities($post->Offer_posting_date) ?></p>
       </div>

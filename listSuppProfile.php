@@ -81,7 +81,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
               <?php if($data['Del_offer']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppOffer.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_offer']==1){ 
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
@@ -109,7 +109,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
                 <?php if($data['Del_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppCompany.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_company']==1){ 
                 echo('<li class="navbar-subitem"><a href="createCompany.php">Créer</a></li>');
