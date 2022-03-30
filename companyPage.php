@@ -54,7 +54,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>');
                 };?>
               <?php if($data['Add_to_wishlist']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Wishlist</a></li>');
+                echo('<li class="navbar-subitem"><a href="wishlistPage.php">Wishlist</a></li>');
                 };?>
             </ul>
           </li>
@@ -73,7 +73,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
               <?php if($data['Del_offer']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppOffer.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_offer']==1){ 
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
@@ -87,7 +87,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
               <?php if($data['Del_student']==1 || $data['Del_representative']==1 || $data['Del_pilot']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">listSuppProfile.php</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppProfile.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_student']==1 || $data['Create_representative']==1 || $data['Create_pilot']==1){ 
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Créer</a></li>');
@@ -101,7 +101,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
                 };?>
                 <?php if($data['Del_company']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                echo('<li class="navbar-subitem"><a href="listSuppCompany.php">Supprimer</a></li>');
                 };?>
               <?php if($data['Create_company']==1){ 
                 echo('<li class="navbar-subitem"><a href="createCompany.php">Créer</a></li>');

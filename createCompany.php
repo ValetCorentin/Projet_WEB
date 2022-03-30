@@ -42,7 +42,7 @@ $data = json_decode($_COOKIE['user_profil'], true);
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>');
                 };?>
               <?php if($data['Add_to_wishlist']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Wishlist</a></li>');
+                echo('<li class="navbar-subitem"><a href="wishlistPage.php">Wishlist</a></li>');
                 };?>
             </ul>
           </li>

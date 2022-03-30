@@ -55,7 +55,7 @@
                 echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Offres postulées</a></li>');
                 };?>
               <?php if($data['Add_to_wishlist']==1){ 
-                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Wishlist</a></li>');
+                echo('<li class="navbar-subitem"><a href="wishlistPage.php">Wishlist</a></li>');
                 };?>
             </ul>
           </li>
@@ -173,6 +173,7 @@
     <?php
 
     $domain='';
+    $contact=$data['Contact_ID'];
 
 if(isset($_GET['domain'])){
   $domain = $_GET['domain'];
@@ -187,7 +188,9 @@ if(isset($_GET['domain'])){
       LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
       LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
       LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
-      LEFT JOIN company ON office.SIREN = company.SIREN;";
+      LEFT JOIN company ON office.SIREN = company.SIREN
+      LEFT JOIN whishs ON offer.Offer_ID = whishs.Offer_ID
+      WHERE whishs.Contact_ID = '$contact';";
     }
     else{
       $queryCompletor ="SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
@@ -196,7 +199,8 @@ if(isset($_GET['domain'])){
     LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
     LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
     LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
-    LEFT JOIN company ON office.SIREN = company.SIREN WHERE Activity_sector_name = '$domain';";
+    LEFT JOIN whishs ON offer.Offer_ID = whishs.Offer_ID
+    LEFT JOIN company ON office.SIREN = company.SIREN WHERE Activity_sector_name = '$domain' AND whishs.Contact_ID = '$contact';";
     }
     
     $query = $conn->query("SELECT COUNT(*) AS COUNTER FROM Offer");
