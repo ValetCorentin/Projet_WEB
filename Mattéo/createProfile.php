@@ -177,10 +177,26 @@
       </div>
 
       <div class="div-box-input" id="Training_center_box">
-        <!-- Training center -->
-        <label for="Training_center">Centre de formation</label>
-        <input type="text" name="Training_center" class="student_form_properties" id="Training_center_Input" required />
+        <div class="div-box-input" id="Training_center_name_box">
+          <!-- Training center -->
+          <label for="Training_center">Centre de formation</label>
+          <input list="Training_center_list" type="text" name="Training_center" class="student_form_properties" id="Training_center_Input" required />
 
+          <?php
+
+          $sqlQuery = $conn->query("SELECT Training_center_name FROM training_center;");
+          $recipes = $sqlQuery->fetchAll();
+          ?>
+          <datalist id="Training_center_list" >
+            <?php
+              foreach ($recipes as $recipe){?>
+              <option value="<?= htmlentities($recipe->Training_center_name) ?>">
+              <?php
+              }
+            ?>
+          </datalist>
+
+        </div>
         <div class="div-box-input" id="Training_center_promotion_box">
           <!-- Training center promotion -->
           <label for="Training_center_promotion">Promotion de l'étudiant</label>
@@ -261,7 +277,6 @@ if (isset($_POST["Login_ID"])) {
     // Preparing the query then sending it to the database
     $recipeStatement = $conn->prepare($sqlQuery);
     $recipeStatement->execute(array('Country_Input' => $Country_Input, 'City_Input' => $City_Input, 'ZIP_Code_Input' => $ZIP_Code_Input, 'Address_Input' => $Address_Input, 'Region_Input' => $Region_Input, 'Name_Input' => $Name_Input, 'Surname_Input' => $Surname_Input, 'Login_Input' => $Login_Input, 'Password_Input' => $Password_Input, 'E_mail_Input' => $E_mail_Input, 'Profile_type_Input' => $Profile_type_Input, 'Training_center_name_Input' => $Training_center_name_Input));
-    
   } else if ($Profile_type_Input === 'Student') {
 
     $Promotion_name_Input = $_POST["Training_center_promotion"];
@@ -295,7 +310,6 @@ INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WH
     // Preparing the query then sending it to the database
     $recipeStatement = $conn->prepare($sqlQuery);
     $recipeStatement->execute(array('Country_Input' => $Country_Input, 'City_Input' => $City_Input, 'ZIP_Code_Input' => $ZIP_Code_Input, 'Address_Input' => $Address_Input, 'Region_Input' => $Region_Input, 'Name_Input' => $Name_Input, 'Surname_Input' => $Surname_Input, 'Login_Input' => $Login_Input, 'Password_Input' => $Password_Input, 'E_mail_Input' => $E_mail_Input, 'Profile_type_Input' => $Profile_type_Input, 'Training_center_name_Input' => $Training_center_name_Input, 'Promotion_name_Input' => $Promotion_name_Input));
-
   } else if ($Profile_type_Input === 'Delegate') {
 
     // Creation query to create a delegate profile
