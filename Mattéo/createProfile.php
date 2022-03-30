@@ -12,11 +12,9 @@
 
 <body>
   <header>
-    <!-- logo à implémenter -->
-    <img src="" alt="Logo Chopes ton stage" />
-    <nav>
-      <!-- navbar à implémenter -->
-    </nav>
+
+    <!-- NAVBAR A IMPLEMENTER -->
+
   </header>
   <main>
     <h1>Création de profil</h1>
@@ -28,7 +26,7 @@
         <div class="div-box-input" id="Login_ID_box">
           <!-- Login ID -->
           <label for="Login_ID">Identifiant de connexion</label>
-          <input type="text" name="Login_ID" id="Login_ID_Input" />
+          <input type="text" name="Login_ID" id="Login_ID_Input" required />
         </div>
 
         <div class="div-box-input" id="Password_box">
@@ -59,8 +57,8 @@
 
       <div class="div-box-input" id="Profile_type_box">
         <!-- Profile type -->
-        <label for="Profil_type">Type de profil</label>
-        <select type="text" name="Profil_type" id="Profil_type_Input" required>
+        <label for="Profile_type">Type de profil</label>
+        <select type="text" name="Profile_type" id="Profil_type_Input" required>
           <option value="" disabled selected>Choisissez un profil</option>
           <option value="Administrator">Administrateur</option>
           <option value="Pilot">Pilote</option>
@@ -181,12 +179,12 @@
       <div class="div-box-input" id="Training_center_box">
         <!-- Training center -->
         <label for="Training_center">Centre de formation</label>
-        <input type="text" name="Training_center" id="Training_center_Input" disabled required />
+        <input type="text" name="Training_center" class="student_form_properties" id="Training_center_Input" required disabled />
 
         <div class="div-box-input" id="Training_center_promotion_box">
           <!-- Training center promotion -->
           <label for="Training_center_promotion">Promotion de l'étudiant</label>
-          <input type="text" name="Training_center_promotion" id="Training_center_promotion_Input" required />
+          <input type="text" name="Training_center_promotion" class="student_form_properties" id="Training_center_promotion_Input" required />
         </div>
       </div>
 
@@ -233,58 +231,76 @@
 
 
 <?php
-if (isset($_POST["Login_ID"])){
-var_dump($_POST);
+if (isset($_POST["Login_ID"])) {
 
-// Assignation of the value from the form to php variables
+  // Assignation of the values from the form to php variables
 
-// $Login_Input = $_POST["Login_ID"];
-// $Password_Input = $_POST["Login_Password"];
-// $Surname_Input = $_POST["Surname"];
-// $Name_Input = $_POST["Name"];
-// $E_mail_Input = $_POST["E-mail"];
-// $Profile_type_Input = $_POST["Profile_type"];
+  $Login_Input = $_POST["Login_ID"];
+  $Password_Input = $_POST["Login_Password"];
+  $Surname_Input = $_POST["Surname"];
+  $Name_Input = $_POST["Name"];
+  $E_mail_Input = $_POST["E-mail"];
+  $Profile_type_Input = $_POST["Profile_type"];
 
-// $Training_center_name_Input = $_POST["Training_center"];
-// $Promotion_name_Input = $_POST["Training_center_promotion"];
+  $Training_center_name_Input = $_POST["Training_center"];
+  $Promotion_name_Input = $_POST["Training_center_promotion"];
 
-// $Country_Input = $_POST["Country"];
-// $Region_Input = $_POST["Region"];
-// $ZIP_Code_Input = $_POST["ZIP_Code"];
-// $City_Input = $_POST["City"];
-// $Address_Input = $_POST["Address"];
+  $Country_Input = $_POST["Country"];
+  $Region_Input = $_POST["Region"];
+  $ZIP_Code_Input = $_POST["ZIP_Code"];
+  $City_Input = $_POST["City"];
+  $Address_Input = $_POST["Address"];
 
+  var_dump($_POST);
+  if ($Profile_type_Input === 'Administrator') {
+
+    // Creation query to create an admin profile
+
+  } else if ($Profile_type_Input === 'Pilot') {
+
+    // Creation query to create a pilot profile
+
+  } else if ($Profile_type_Input === 'Student') {
+
+    // Creation query to create a student profile
+
+    // Promotion_name existance query
+    $sqlQuery = "SELECT COUNT(*) AS Total FROM Promotion WHERE Promotion_name = :Promotion_name_Input ;";
+    $recipeStatement = $conn->prepare($sqlQuery);
+    $recipeStatement->execute(array('Promotion_name_Input' => $Promotion_name_Input));
+
+    $recipes = $recipeStatement->fetch();
+
+    // Creation of the query to create a new student profile
+    if (($recipes->Total) == 0) {
+
+      // Query used to create a student if his promotion hasn't been created
+      $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
+INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
+INSERT INTO promotion VALUES ('NULL', :Promotion_name_Input);
+INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
+INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input));";
+
+    } else if (($recipes->Total) > 0) {
+
+      // Query used to create a student if his promotion has been created
+      $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
+INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
+INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
+INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input));";
+
+    }
+
+    // Preparing the query then sending it to the database
+    $recipeStatement = $conn->prepare($sqlQuery);
+    $recipeStatement->execute(array('Country_Input' => $Country_Input, 'City_Input' => $City_Input, 'ZIP_Code_Input' => $ZIP_Code_Input, 'Address_Input' => $Address_Input, 'Region_Input' => $Region_Input, 'Name_Input' => $Name_Input, 'Surname_Input' => $Surname_Input, 'Login_Input' => $Login_Input, 'Password_Input' => $Password_Input, 'E_mail_Input' => $E_mail_Input, 'Profile_type_Input' => $Profile_type_Input, 'Training_center_name_Input' => $Training_center_name_Input ,'Promotion_name_Input' => $Promotion_name_Input));
+
+  } else if ($Profile_type_Input === 'Delegate') {
+
+    // Creation query to create a delegate profile
+
+  }
 }
-
-
-
-// // Promotion_name existance query
-// $sqlQuery = "SELECT COUNT(*) AS Total FROM Promotion WHERE Promotion_name = :Promotion_name_Input ;";
-// $recipeStatement = $conn->prepare($sqlQuery);
-// $recipeStatement->execute(array('Promotion_name_Input' => $Promotion_name_Input));
-
-// $recipes = $recipeStatement->fetch();
-
-// // Creation of the query to create a new student profile
-// if (($recipes->Total) == 0) {
-
-//   // Query used to create a student if his promotion hasn't been created
-//   $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
-// INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
-// INSERT INTO promotion VALUES ('NULL', :Promotion_name_Input);
-// INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
-// INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input));";
-
-// } else if (($recipes->Total) > 0) {
-
-//   // Query used to create a student if his promotion has been created
-//   $sqlQuery = "INSERT INTO address VALUES ('NULL', :Country_Input, :City_Input, :ZIP_Code_Input, :Address_Input, :Region_Input);
-// INSERT INTO contact VALUES ('NULL', :Name_Input, :Surname_Input, :Login_Input, :Password_Input, :E_mail_Input, :Profile_type_Input, (SELECT MAX(Locality_ID) FROM address), (SELECT Training_center_ID FROM training_center WHERE Training_center_name = :Training_center_name_Input));
-// INSERT INTO belongs VALUES ((SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input), (SELECT MAX(Contact_ID) FROM contact));
-// INSERT INTO possesses VALUES ((SELECT Training_center_ID from training_center WHERE Training_center_name = :Training_center_name_Input), (SELECT Promotion_ID FROM promotion WHERE Promotion_ID = :Promotion_name_Input));";
-
-// }
-
 
 
 ?>

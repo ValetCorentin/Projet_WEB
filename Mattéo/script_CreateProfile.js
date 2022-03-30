@@ -24,23 +24,37 @@ function hide_rights() {
   document.getElementById("Delegate_rights").style.display = "none";
 }
 
+const training_center_box = document.getElementById("Training_center_box");
 function show_training_center() {
-  document.getElementById("Training_center_box").style.display = "inline";
+
+  for (var i = 0; i < 2 ; i++){
+    document.getElementsByClassName('student_form_properties')[i].disabled = true;
+  }
+  training_center_box.style.display = "inline";
 }
 
 function hide_training_center(){
-  document.getElementById("Training_center_box").style.display = "none";
+  for (var i = 0; i < 2 ; i++){
+    document.getElementsByClassName('student_form_properties')[i].disabled = true;
+  }
+  training_center_box.style.display = "none";
 }
 
 document.getElementById("Profil_type_Input").onclick = function () {
   if (document.getElementById("Profil_type_Input").value == "Delegate") {
+
     hide_training_center();
     show_rights();
+
   } else if (document.getElementById("Profil_type_Input").value == "Student") {
+
     hide_rights();
     show_training_center();
+
   } else {
+
     hide_training_center();
     hide_rights();
+
   }
 };
