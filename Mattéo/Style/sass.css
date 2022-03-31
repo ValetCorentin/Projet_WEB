@@ -1,0 +1,116 @@
+.main-content .h1-content {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.main-content .hr-content {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.body-content {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 200px;
+}
+
+.body-content .label-content {
+  font-size: 24px;
+}
+
+.form-profile-creation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 50px 0px 50px;
+}
+
+.form-profile-creation .input-box,
+.form-profile-creation .select-box {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+}
+
+.form-profile-creation .select-box {
+  height: 33px;
+}
+
+.form-profile-creation .label-content {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form-profile-creation .div-box-input,
+.form-profile-creation .div-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-profile-creation .div-box-input .input-box,
+.form-profile-creation .div-box-input .select-box,
+.form-profile-creation .div-box .input-box,
+.form-profile-creation .div-box .select-box {
+  width: 257px;
+  text-align: center;
+}
+
+.form-profile-creation #login_and_password_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Surname_Name_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Delegate_rights {
+  display: none;
+}
+
+.form-profile-creation #Training_center_box {
+  display: inline;
+}
+
+.form-profile-creation #button-submit_form {
+  width: 100px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
+}
+/*# sourceMappingURL=sass.css.map */

@@ -1,20 +1,28 @@
-@import "Mixins.scss";
-@import "Variables.scss";
+// Mixins
+@mixin box_disposition {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
-main {
-  h1 {
+// Variables
+$size_input: 25px;
+$background-color_input: rgba(229, 229, 229, 1);
+
+.main-content {
+  .h1-content {
     margin-top: 80px;
     text-align: center;
   }
-  hr {
+  .hr-content {
     width: 50%;
     margin-bottom: 50px;
   }
 }
 
-body {
+.body-content {
   font-family: Roboto, sans-serif;
-  label {
+  .label-content {
     font-size: 24px;
   }
 
@@ -22,25 +30,25 @@ body {
 }
 
 // Formulaire de création de profil
-form {
+.form-profile-creation {
   display: flex;
   flex-direction: column;
   margin: 30px 50px 0px 50px;
 
   // Stylisme des inputs
-  input,
-  select {
+  .input-box,
+  .select-box {
     background-color: $background-color_input;
     border-radius: 5px;
     border-color: transparent;
     height: $size_input;
   }
 
-  select {
+  .select-box {
     height: $size_input + 8;
   }
 
-  label {
+  .label-content {
     margin-top: 20px;
     margin-bottom: 5px;
   }
@@ -52,8 +60,8 @@ form {
     text-align: center;
     align-items: center;
 
-    input,
-    select {
+    .input-box,
+  .select-box  {
       width: 257px;
       text-align: center;
     }
