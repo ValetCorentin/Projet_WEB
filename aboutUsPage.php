@@ -89,7 +89,23 @@
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Bureau</a>
+            <ul class="navbar-submenu">
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="createOffice.php">Créer</a></li>');
+                };?>
+            </ul>
+          </li>
+          <li class="navbar-item">
+            <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          </li>
 
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             
@@ -108,14 +124,13 @@
         <h1>A propos de nous :</h1>
     </p>
 	  
-	<p>
+	
     <h2>
 		Qui sommes nous ?
     </h2>    
-    <h2>
+    <p>
 		Nous sommes une petite équipe de 5 développeurs web étudiant à CESI et nous avons décidé de créer ce site.
-	</h2>
-    </p>
+	  </p>
 
     <div id="campus">
         <div style="position:absolute;z-index: 1;">
@@ -123,37 +138,31 @@
         </div>
     </div>
 
-    <p>
-        <h2>	
-            Pourquoi faisons nous ça ?
-        </h2>    
-        <h2>
-            Frustré de nos expériences personnel avec les autres site internet qui relayaient les offres de stage, souvent imprécise, parfois avec des offres en doublon ou pire de fausses offres.
-            Nous avons donc décider de créer ce site où notre objectif sera de répertorier le plus d’offre possible et précise, sans doublons et avec toute les information que l’utilisateur aurai besoin.
-        </h2>
-    </p>
+    
+      <h2>	
+          Pourquoi faisons nous ça ?
+      </h2>    
+      <p>
+          Frustré de nos expériences personnel avec les autres site internet qui relayaient les offres de stage, souvent imprécise, parfois avec des offres en doublon ou pire de fausses offres.
+          Nous avons donc décider de créer ce site où notre objectif sera de répertorier le plus d’offre possible et précise, sans doublons et avec toute les information que l’utilisateur aurai besoin.
+      </p>
+    
 
-    <P>
-        <h2>	
-            Nos objectifs
-        </h2>    
-        <h2>
-            Notre objectif principale et la transparence ! toutes les offres seront étudié pour leur fiabilité avant d’être poster sur “Chopes ton stage !”
-        </h2>
-    </P>
-	
-    <div id="livre">
-        <div style="position:absolute;z-index:1">
-           <img src="livre.png">
-        </div>
-    </div>
-    <p> 
+    
+      <h2>	
+          Nos objectifs
+      </h2>    
+      <p>
+        Notre objectif principale et la transparence ! toutes les offres seront étudié pour leur fiabilité avant d’être poster sur “Chopes ton stage !”
+      </p>
+    
+
+    
     <h2>	
 		Nos espoirs
     </h2>    
-    <h2>
+    <p>
 		Notre espoirs avec ce site c’est d’aider les particulier dans leur recherche de stage pour que ces derniers puissent acquérir les bonnes connaissances pour avoir le métier de leur rêves!
-	</h2>
     </p>
 
                                           <!-- Footer -->

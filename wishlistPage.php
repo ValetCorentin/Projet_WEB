@@ -109,7 +109,23 @@
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Bureau</a>
+            <ul class="navbar-submenu">
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="createOffice.php">Créer</a></li>');
+                };?>
+            </ul>
+          </li>
+          <li class="navbar-item">
+            <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          </li>
 
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             
@@ -145,7 +161,7 @@
         <input type="submit" value="Rechercher" class="research-input research-button">
       </form>
 
-      <form action="" method="get" class="research-form">
+      <form action="" method="post" class="research-form">
         <!-- Add to wishlist -->
         <label for="domain-selector">ID de l'offre à supprimer dans la wishlist :</label>
         <input type="number" name="IDToWhishlist" class="research-input" placeholder="Entrez l'ID">
@@ -153,8 +169,8 @@
       </form>
 
 <?php
-      if (isset($_GET["IDToWhishlist"])) {
-        $IDToWhishlist = $_GET["IDToWhishlist"];
+      if (isset($_POST["IDToWhishlist"])) {
+        $IDToWhishlist = $_POST["IDToWhishlist"];
         //creating prepared query
         $query = $conn->prepare("DELETE FROM whishs WHERE Offer_ID = :Offer_ID AND Contact_ID = :Contact_ID");/*création de la requete*/
         $query->bindParam(':Offer_ID', $IDToWhishlist);

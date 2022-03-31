@@ -90,7 +90,23 @@
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Bureau</a>
+            <ul class="navbar-submenu">
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="createOffice.php">Créer</a></li>');
+                };?>
+            </ul>
+          </li>
+          <li class="navbar-item">
+            <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          </li>
 
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             

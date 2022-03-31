@@ -1,43 +1,31 @@
-#livre
-{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    width: 239px;
-    height: 145px;
-    left: 90%;
-    z-index: 1;
+h1,
+h2 {
+  text-align: center;
 }
 
-h1,h2
-{
- text-align: center;
+p {
+  z-index: 300;
+  text-align: center;
+  font-size: 18px;
 }
 
-p
-{
-    z-index: 300;
+#logo-cesi {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 180px;
+  height: 0px;
+  left: 90%;
+  z-index: 1;
 }
 
-#logo-cesi
-{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    width: 239px;
-    height: 145px;
-    left: 80%;
-    z-index: 1;
-}
-
-#campus
-{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    width: 239px;
-    height: 145px;
-    left: 50%;
-    z-index: 1;
-    opacity: 0.3;
+#campus {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 239px;
+  height: 145px;
+  left: 50%;
+  z-index: 1;
+  opacity: 0.3;
 }

@@ -116,7 +116,23 @@
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Bureau</a>
+            <ul class="navbar-submenu">
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="createOffice.php">Créer</a></li>');
+                };?>
+            </ul>
+          </li>
+          <li class="navbar-item">
+            <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          </li>
 
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             
@@ -148,10 +164,32 @@
       </div>
 
         <?php
+
+        // $administratorBool = 'null';
+        // $pilotBool = 'null';
+        // $studentBool = 'null';
+        // $delegateBool = 'null';
+
+
+        // if($data['Del_pilot'] == 1){ //pas de droit del-administrator dans la BDD
+        //   $administratorBool = 'Administrator';
+        // }
+        // if($data['Del_pilot'] == 1){
+        //   $pilotBool = 'Pilot';
+        // }
+        // if($data['Del_student'] == 1){
+        //   $studentBool = 'Student';
+        // }
+        // if($data['Del_representative'] == 1){ //A revoir
+        //   $delegateBool = 'Delegate';
+        // }
+        
+
+
         if(isset($_GET['name'])){
           $name = $_GET['name'];
           
-          $query = $connexion->query("SELECT * FROM contact WHERE First_name = '$name' or Last_name = '$name'");
+          $query = $connexion->query("SELECT * FROM contact WHERE First_name = '$name' OR Last_name = '$name'");
           if($query === false){
             var_dump($connexion->errorInfo());
             die('Erreur SQL');

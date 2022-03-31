@@ -96,7 +96,23 @@ $data = json_decode($_COOKIE['user_profil'], true);
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Bureau</a>
+            <ul class="navbar-submenu">
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="createOffice.php">Créer</a></li>');
+                };?>
+            </ul>
+          </li>
+          <li class="navbar-item">
+            <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          </li>
 
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             
@@ -116,18 +132,22 @@ $data = json_decode($_COOKIE['user_profil'], true);
         <div id="company_box">
           <!-- Company_name -->
           <label for="Company_name">Nom de l'entreprise</label>
-          <input type="text" name="Company_name" id="Company_ID_input" minlength="8" maxlength="8" placeholder="8 caractères nécessaires" />
+          <input type="text" name="Company_name" id="Company_ID_input" placeholder="Nom de l'entreprise" autocomplete="off"/>
         </div>
 
         <div id="siren_box">
           <!-- Siren -->
           <label for="Siren">Numéro de SIREN</label>
-          <input type="text" name="Siren" id="Surname_Input" placeholder="SIREN" />
+          <input type="text" name="Siren" id="SIREN_Input" minlength="8" maxlength="8" placeholder="8 chiffres nécessaires" />
+        </div>
+
+          <div id="company_email_box">
+          <!-- Company_email -->
+          <label for="Company_mail">Addresse mail de l'entreprise</label>
+          <input type="email" name="Company_mail" id="company_mail_input" placeholder="email@exemple.fr" />
         </div>
           <input id="but" type="submit" value="Valider">
-
-
-      </div>
+        </div>
 
       <?php
       $servername = 'localhost';
@@ -144,12 +164,14 @@ $data = json_decode($_COOKIE['user_profil'], true);
 
         $company_name = $_POST["Company_name"];
         $siren = $_POST["Siren"];
+        $company_mail = $_POST["Company_mail"];
 
         //creating prepared query
-        $query = $conn->prepare("INSERT INTO company (SIREN, Company_name) VALUES (:siren, :company_name)");/*création de la requete*/
-        // $query = $conn->query("INSERT INTO company (SIREN, Company_name) VALUES ('$company_name', '$siren')");
+        $query = $conn->prepare("INSERT INTO company (SIREN, Company_name, Company_mail) VALUES (:siren, :company_name, :company_mail)");/*création de la requete*/
         $query->bindParam(':company_name', $company_name);
         $query->bindParam(':siren', $siren);
+        $query->bindParam(':company_mail', $company_mail);
+
 
         $query->execute();
 

@@ -667,26 +667,100 @@
   justify-items: center;
 }
 
-#livre {
+#createOffice-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#createOffice-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 16px;
+}
+
+#createOffice-main #but:hover {
+  background-color: #706b6b;
+}
+
+#createOffice-body label {
+  font-size: 24px;
+}
+
+#createOffice-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#createOffice-form input,
+#createOffice-form select {
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#createOffice-form select {
+  height: 20;
+}
+
+#createOffice-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#createOffice-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  width: 239px;
-  height: 145px;
-  left: 90%;
-  z-index: 1;
 }
 
-h1, h2 {
+#createOffice-form div input,
+#createOffice-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#createOffice-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+h1,
+h2 {
   text-align: center;
 }
 
 p {
   z-index: 300;
+  text-align: center;
+  font-size: 18px;
 }
 
 #logo-cesi {
@@ -697,9 +771,9 @@ p {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 239px;
-  height: 145px;
-  left: 80%;
+  width: 180px;
+  height: 0px;
+  left: 90%;
   z-index: 1;
 }
 

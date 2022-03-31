@@ -109,7 +109,23 @@
                 };?>
             </ul>
           </li>
-          <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          <li class="navbar-item has-submenu">
+            <a tabindex="0">Bureau</a>
+            <ul class="navbar-submenu">
+              <?php if($data['Modif_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Modifier</a></li>');
+                };?>
+                <?php if($data['Del_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="commingSoonPage.html">Supprimer</a></li>');
+                };?>
+              <?php if($data['Create_company']==1){ 
+                echo('<li class="navbar-subitem"><a href="createOffice.php">Créer</a></li>');
+                };?>
+            </ul>
+          </li>
+          <li class="navbar-item">
+            <a href="disconnect.php" class="navbar-item">Déconnexion</a>
+          </li>
 
             <li class="navbar-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
             
@@ -127,7 +143,7 @@
       <form action="" method="get" class="research-form">
 
         <!-- Domains -->
-        <label for="domain-selector">Domaine :</label>
+        <label>Domaine :</label>
         <input list="domains" name="domain" class="research-input" placeholder="Choisissez un domaine ">
         <?php
         $query = $conn->query("SELECT * FROM Activity_sector");
@@ -145,16 +161,16 @@
         <input type="submit" value="Rechercher" class="research-input research-button">
       </form>
 
-      <form action="" method="get" class="research-form">
+      <form action="" method="post" class="research-form">
         <!-- Add to wishlist -->
-        <label for="domain-selector">ID de l'offre à ajouter dans la wishlist :</label>
+        <label>ID de l'offre à ajouter dans la wishlist :</label>
         <input type="number" name="IDToWhishlist" class="research-input" placeholder="Entrez l'ID">
         <input type="submit" value="Ajouter" class="research-input research-button">
       </form>
 
 <?php
-      if (isset($_GET["IDToWhishlist"])) {
-        $IDToWhishlist = $_GET["IDToWhishlist"];
+      if (isset($_POST["IDToWhishlist"])) {
+        $IDToWhishlist = $_POST["IDToWhishlist"];
         //creating prepared query
         $query = $conn->prepare("INSERT INTO whishs (Offer_ID, Contact_ID) VALUES (:Offer_ID,:Contact_ID)");/*création de la requete*/
         $query->bindParam(':Offer_ID', $IDToWhishlist);
@@ -166,6 +182,49 @@
             var_dump($conn->errorInfo());
             die('Erreur SQL');
         }
+      }
+  ?>
+
+  <form action="" method="post" class="research-form">
+        <!-- Apply -->
+        <label>ID de l'offre où vous souhaitez postuler :</label>
+        <input type="number" name="IDToApply" class="research-input" placeholder="Entrez l'ID">
+        <input type="submit" value="Postuler" class="research-input research-button">
+  </form>
+
+<?php
+      if (isset($_POST["IDToApply"])) {
+        $IDToApply = $_POST["IDToApply"];
+        //creating prepared query
+        $query = $conn->prepare("INSERT INTO Apply (Offer_ID, Contact_ID) VALUES (:Offer_ID,:Contact_ID)");/*création de la requete*/
+        $query->bindParam(':Offer_ID', $IDToApply);
+        $query->bindParam(':Contact_ID', $data['Contact_ID']);
+
+        $query->execute();
+
+        if ($query === false) {
+            var_dump($conn->errorInfo());
+            die('Erreur SQL');
+        }
+
+        $query = $conn->prepare("SELECT Company_mail FROM company
+        LEFT JOIN office ON company.SIREN = Office.SIREN
+        LEFT JOIN Offer ON office.SIRET = Offer.SIRET
+        WHERE Offer_ID = :Offer_ID;");/*création de la requete*/
+        $query->bindParam(':Offer_ID', $IDToApply);
+
+        $query->execute();
+
+        if ($query === false) {
+            var_dump($conn->errorInfo());
+            die('Erreur SQL');
+        }
+        $posts = $query->fetchAll();
+        foreach($posts as $post){
+          ?> <p style="text-align:center;" > Adresse email de l'entreprise où vous souhaitez postuler : <?php echo($post->Company_mail);?> </p>
+        
+        <?php
+        } 
       }
   ?>
       
