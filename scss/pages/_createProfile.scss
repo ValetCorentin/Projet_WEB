@@ -1,61 +1,76 @@
-@import '../settings/_variables';
-
-
-#createProfile-main{
-  h1{
+// Variables
+$size_input: 25px;
+$background-color_input: rgba(229, 229, 229, 1);
+.main-content {
+  .h1-content {
     margin-top: 80px;
     text-align: center;
   }
-  hr{
+  .hr-content {
     width: 50%;
     margin-bottom: 50px;
   }
 }
 
-#createProfile-body {
-  label {
+.body-content {
+  font-family: Roboto, sans-serif;
+  .label-content {
     font-size: 24px;
   }
+  margin-bottom: 200px;
 }
 
 // Formulaire de création de profil
-#createProfile-form {
+.form-profile-creation {
   display: flex;
   flex-direction: column;
   margin: 30px 50px 0px 50px;
-
   // Stylisme des inputs
-  input, select {
+  .input-box,
+  .select-box {
     background-color: $background-color_input;
     border-radius: 5px;
     border-color: transparent;
     height: $size_input;
   }
-
-  select {
+  .select-box {
     height: $size_input + 8;
   }
-
-  label {
+  .label-content {
     margin-top: 20px;
     margin-bottom: 5px;
   }
-
-  div{
+  .div-box-input,
+  .div-box {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-
-    input, select{
+    .input-box,
+    .select-box {
       width: 257px;
       text-align: center;
     }
-    
   }
-  #login_and_password_box{
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  #login_and_password_box {
+    @include box_disposition();
+  }
+  #Surname_Name_box {
+    @include box_disposition();
+  }
+  #Delegate_rights {
+    display: none;
+  }
+  #Training_center_box {
+    display: inline;
+  }
+  #button-submit_form {
+    width: 100px;
+    height: 30px;
+    align-self: center;
+    justify-content: center;
+    border-color: black;
+    border-radius: 3px;
+    margin-top: 40px;
   }
 }

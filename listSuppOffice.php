@@ -33,21 +33,18 @@
                 catch(PDOException $e){
                 echo "Erreur : " . $e->getMessage();
                 }
-                $data = json_decode($_COOKIE['user_profil'], true);
-
                 ?>
 
 <body id="suppoffer-body">
-<!-- NAVBAR -->
-    <?php
+  <?php
+// NAVBAR
     @require_once 'navbar.php';
     
     ?>
-  
   <!-- Main -->
   <main id="suppoffer-main">
 
-    <h1>Offres</h1>
+    <h1>Bureaux</h1>
       <div class="recherche">
         <div class="form">
 
@@ -57,8 +54,8 @@
     <form action="" method="get" class="research-form">
 
         <!-- Company -->
-        <label for="name-selector">Nom de l'offre/SIRET :</label>
-        <input list="name" name="name" class="research-input" placeholder="exemple : web">
+        <label for="name-selector">SIRET du bureau :</label>
+        <input list="name" name="name" class="research-input" placeholder="">
         <input type="submit" value="Rechercher" class="research-input research-button">
       </form>
       </div>
@@ -66,21 +63,21 @@
         <?php
         if(isset($_GET['name'])){
           $name = $_GET['name'];
-          
-          $query = $connexion->query("SELECT * FROM offer WHERE Promotion_type = '$name' or SIRET = '$name'");
+          $query = $connexion->query("SELECT * FROM office LEFT JOIN company ON Office.SIREN = Company.SIREN WHERE SIRET='$name' OR Company_name='$name';");
           if($query === false){
             var_dump($connexion->errorInfo());
             die('Erreur SQL');
           }
           $posts = $query->fetchAll();
+          
           foreach ($posts as $post) {
                 ?>
-                <p><?php echo $post['Promotion_type'];?> <?php echo $post['SIRET'];?> - <a href="suppoffer.php?name_id=<?= $post['Offer_ID']; ?>">Supprimer</a></p>
+                <p><?php echo $post['Company_name'];?>(<?php echo $post['SIRET'];?>) - <a href="suppoffice.php?SIRET=<?= $post['SIRET']; ?>&Locality_ID=<?= $post['Locality_ID']; ?>">Supprimer</a></p>
                 <?php
                 }
         }else{ 
           
-                $sqlQuery = 'SELECT * FROM offer';
+                $sqlQuery = 'SELECT * FROM office LEFT JOIN company ON office.SIREN = company.SIREN;';
                 $recipesStatement = $connexion->prepare($sqlQuery);
                 $recipesStatement->execute();
                 $recipes = $recipesStatement->fetchAll();
@@ -88,8 +85,7 @@
                 // On affiche chaque recette une à une
                 foreach ($recipes as $recipe) {
                 ?>
-                
-                <p><?php echo $recipe['Promotion_type'];?> <?php echo $recipe['SIRET'];?> - <a href="suppoffer.php?name_id=<?= $recipe['Offer_ID']; ?>">Supprimer</a></p>
+                <p><?php echo $recipe['Company_name'];?>(<?php echo $recipe['SIRET'];?>) - <a href="suppoffice.php?SIRET=<?= $recipe['SIRET']; ?>&Locality_ID=<?= $recipe['Locality_ID']; ?>">Supprimer</a></p>
                 <?php
                 }
                 ?>
@@ -97,6 +93,7 @@
             } ?>
             </div>
 
+      
   </main>
   <!-- Script -->
   <script src="js/js.js"></script>

@@ -63,31 +63,6 @@
         </datalist>
         <input type="submit" value="Rechercher" class="research-input research-button">
       </form>
-
-      <form action="" method="post" class="research-form">
-        <!-- Delete to wishlist -->
-        <label for="domain-selector">ID de l'offre à supprimer dans la wishlist :</label>
-        <input type="number" name="IDToWhishlist" class="research-input" placeholder="Entrez l'ID">
-        <input type="submit" value="Supprimer" class="research-input research-button">
-      </form>
-
-<?php
-      if (isset($_POST["IDToWhishlist"])) {
-        $IDToWhishlist = $_POST["IDToWhishlist"];
-        //creating prepared query
-        $query = $conn->prepare("DELETE FROM whishs WHERE Offer_ID = :Offer_ID AND Contact_ID = :Contact_ID");/*création de la requete*/
-        $query->bindParam(':Offer_ID', $IDToWhishlist);
-        $query->bindParam(':Contact_ID', $data['Contact_ID']);
-
-        $query->execute();
-
-        if ($query === false) {
-            var_dump($conn->errorInfo());
-            die('Erreur SQL');
-        }
-      }
-  ?>
-      
     </div>
     <?php
 
@@ -108,8 +83,8 @@ if(isset($_GET['domain'])){
       LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
       LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
       LEFT JOIN company ON office.SIREN = company.SIREN
-      LEFT JOIN whishs ON offer.Offer_ID = whishs.Offer_ID
-      WHERE whishs.Contact_ID = '$contact';";
+      LEFT JOIN apply ON offer.Offer_ID = apply.Offer_ID
+      WHERE apply.Contact_ID = '$contact';";
     }
     else{
       $queryCompletor ="SELECT offer.Offer_ID, Duration, Offer_posting_date, Offer_date, Salary, Number_place, Promotion_type, Offer_grade, offer.SIRET, Number_trainee, Country, City, Zip_code, Address, Region, Activity_sector_name, Company_name
@@ -118,8 +93,8 @@ if(isset($_GET['domain'])){
     LEFT JOIN address ON address.Locality_ID = Office.Locality_ID
     LEFT JOIN is_part_of ON offer.SIRET = is_part_of.SIRET
     LEFT JOIN needs ON offer.Offer_ID = needs.Offer_ID
-    LEFT JOIN whishs ON offer.Offer_ID = whishs.Offer_ID
-    LEFT JOIN company ON office.SIREN = company.SIREN WHERE Activity_sector_name = '$domain' AND whishs.Contact_ID = '$contact';";
+    LEFT JOIN apply ON offer.Offer_ID = apply.Offer_ID
+    LEFT JOIN company ON office.SIREN = company.SIREN WHERE Activity_sector_name = '$domain' AND apply.Contact_ID = '$contact';";
     }
     
     $query = $conn->query("SELECT COUNT(*) AS COUNTER FROM Offer");

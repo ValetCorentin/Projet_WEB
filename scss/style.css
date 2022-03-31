@@ -106,24 +106,26 @@
   border-color: black;
 }
 
-/* Color */
-/* Size */
-/* Padding */
-#createProfile-main h1 {
+.main-content .h1-content {
   margin-top: 80px;
   text-align: center;
 }
 
-#createProfile-main hr {
+.main-content .hr-content {
   width: 50%;
   margin-bottom: 50px;
 }
 
-#createProfile-body label {
+.body-content {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 200px;
+}
+
+.body-content .label-content {
   font-size: 24px;
 }
 
-#createProfile-form {
+.form-profile-creation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,23 +136,25 @@
   margin: 30px 50px 0px 50px;
 }
 
-#createProfile-form input, #createProfile-form select {
+.form-profile-creation .input-box,
+.form-profile-creation .select-box {
   background-color: #e5e5e5;
   border-radius: 5px;
   border-color: transparent;
   height: 25px;
 }
 
-#createProfile-form select {
+.form-profile-creation .select-box {
   height: 33px;
 }
 
-#createProfile-form label {
+.form-profile-creation .label-content {
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
-#createProfile-form div {
+.form-profile-creation .div-box-input,
+.form-profile-creation .div-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,12 +168,15 @@
           align-items: center;
 }
 
-#createProfile-form div input, #createProfile-form div select {
+.form-profile-creation .div-box-input .input-box,
+.form-profile-creation .div-box-input .select-box,
+.form-profile-creation .div-box .input-box,
+.form-profile-creation .div-box .select-box {
   width: 257px;
   text-align: center;
 }
 
-#createProfile-form #login_and_password_box {
+.form-profile-creation #login_and_password_box {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -179,6 +186,40 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.form-profile-creation #Surname_Name_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Delegate_rights {
+  display: none;
+}
+
+.form-profile-creation #Training_center_box {
+  display: inline;
+}
+
+.form-profile-creation #button-submit_form {
+  width: 100px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
 }
 
 /* Color */
@@ -667,6 +708,254 @@
   justify-items: center;
 }
 
+#suppoffer-main {
+  text-decoration: none;
+}
+
+#suppoffer-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#suppoffer-main .recherche {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#suppoffer-main .form {
+  margin-bottom: 50px;
+}
+
+#suppoffer-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#suppoffer-main #but:hover {
+  background-color: #706b6b;
+}
+
+#suppoffer-body {
+  margin-bottom: 200px;
+}
+
+#suppoffer-body label {
+  font-size: 24px;
+}
+
+#suppoffer-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suppoffer-form input, #suppoffer-form select {
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#suppoffer-form select {
+  height: 25px;
+}
+
+#suppoffer-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#suppoffer-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suppoffer-form div input, #suppoffer-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#suppoffer-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.suppoffer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.main-content .h1-content {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.main-content .hr-content {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.body-content {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 200px;
+}
+
+.body-content .label-content {
+  font-size: 24px;
+}
+
+.form-profile-creation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 50px 0px 50px;
+}
+
+.form-profile-creation .input-box,
+.form-profile-creation .select-box {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+}
+
+.form-profile-creation .select-box {
+  height: 33px;
+}
+
+.form-profile-creation .label-content {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form-profile-creation .div-box-input,
+.form-profile-creation .div-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-profile-creation .div-box-input .input-box,
+.form-profile-creation .div-box-input .select-box,
+.form-profile-creation .div-box .input-box,
+.form-profile-creation .div-box .select-box {
+  width: 257px;
+  text-align: center;
+}
+
+.form-profile-creation #login_and_password_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Surname_Name_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Delegate_rights {
+  display: none;
+}
+
+.form-profile-creation #Training_center_box {
+  display: inline;
+}
+
+.form-profile-creation #button-submit_form {
+  width: 100px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
+}
+
 #createOffice-main h1 {
   margin-top: 80px;
   text-align: center;
@@ -752,12 +1041,11 @@
           justify-content: space-evenly;
 }
 
-h1,
-h2 {
+.header_propos {
   text-align: center;
 }
 
-p {
+.paragraphe {
   z-index: 300;
   text-align: center;
   font-size: 18px;
