@@ -1,0 +1,1339 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+#offer-number {
+  text-align: center;
+}
+
+.research-box {
+  background-color: lightgrey;
+  -webkit-box-shadow: 2px 5px 5px grey;
+          box-shadow: 2px 5px 5px grey;
+  margin: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.research-box .research-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.research-box .research-form .research-input {
+  border-radius: 6px;
+  border-color: black;
+  margin: 26px;
+}
+
+.research-box .research-form .research-button {
+  background-color: black;
+  color: white;
+}
+
+.offer-box {
+  margin: 3%;
+  background-color: lightgrey;
+  -webkit-box-shadow: 2px 5px 5px grey;
+          box-shadow: 2px 5px 5px grey;
+  padding: 20px;
+}
+
+#main-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightgrey;
+  margin: 5% 30% 30% 25%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 16px;
+}
+
+#authentification-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#spacing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#authentification-title {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#connect-button {
+  width: 60%;
+  background-color: white;
+  border-radius: 4px;
+  border-color: black;
+}
+
+.main-content .h1-content {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.main-content .hr-content {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.body-content {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 200px;
+}
+
+.body-content .label-content {
+  font-size: 24px;
+}
+
+.form-profile-creation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 50px 0px 50px;
+}
+
+.form-profile-creation .input-box,
+.form-profile-creation .select-box {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+}
+
+.form-profile-creation .select-box {
+  height: 33px;
+}
+
+.form-profile-creation .label-content {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form-profile-creation .div-box-input,
+.form-profile-creation .div-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-profile-creation .div-box-input .input-box,
+.form-profile-creation .div-box-input .select-box,
+.form-profile-creation .div-box .input-box,
+.form-profile-creation .div-box .select-box {
+  width: 257px;
+  text-align: center;
+}
+
+.form-profile-creation #login_and_password_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Surname_Name_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Delegate_rights {
+  display: none;
+}
+
+.form-profile-creation #Training_center_box {
+  display: inline;
+}
+
+.form-profile-creation #button-submit_form {
+  width: 100px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
+}
+
+/* Color */
+/* Size */
+/* Padding */
+#createCompany-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#createCompany-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+}
+
+#createCompany-main #but:hover {
+  background-color: #706b6b;
+}
+
+#createCompany-body label {
+  font-size: 24px;
+}
+
+#createCompany-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#createCompany-form input,
+#createCompany-form select {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+  text-align: center;
+}
+
+#createCompany-form select {
+  height: 33px;
+}
+
+#createCompany-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#createCompany-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#createCompany-form div input,
+#createCompany-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#createCompany-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#suppprofile-main {
+  text-decoration: none;
+}
+
+#suppprofile-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#suppprofile-main .recherche {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#suppprofile-main .form {
+  margin-bottom: 50px;
+}
+
+#suppprofile-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#suppprofile-main #but:hover {
+  background-color: #706b6b;
+}
+
+#suppprofile-body {
+  margin-bottom: 200px;
+}
+
+#suppprofile-body label {
+  font-size: 24px;
+}
+
+#suppprofile-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suppprofile-form input, #suppprofile-form select {
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#suppprofile-form select {
+  height: 25px;
+}
+
+#suppprofile-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#suppprofile-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suppprofile-form div input, #suppprofile-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#suppprofile-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.suppprofile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  justify-content: center;
+  justify-items: center;
+}
+
+#suppCompany-main {
+  text-decoration: none;
+}
+
+#suppCompany-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#suppCompany-main .recherche {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#suppCompany-main .form {
+  margin-bottom: 50px;
+}
+
+#suppCompany-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#suppCompany-main #but:hover {
+  background-color: #706b6b;
+}
+
+#suppCompany-body {
+  margin-bottom: 200px;
+}
+
+#suppCompany-body label {
+  font-size: 24px;
+}
+
+#suppCompany-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suppCompany-form input,
+#suppCompany-form select {
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#suppCompany-form select {
+  height: 25px;
+}
+
+#suppCompany-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#suppCompany-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suppCompany-form div input,
+#suppCompany-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#suppCompany-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.suppCompany {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  justify-content: center;
+  justify-items: center;
+}
+
+#suppoffer-main {
+  text-decoration: none;
+}
+
+#suppoffer-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#suppoffer-main .recherche {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#suppoffer-main .form {
+  margin-bottom: 50px;
+}
+
+#suppoffer-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#suppoffer-main #but:hover {
+  background-color: #706b6b;
+}
+
+#suppoffer-body {
+  margin-bottom: 200px;
+}
+
+#suppoffer-body label {
+  font-size: 24px;
+}
+
+#suppoffer-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suppoffer-form input, #suppoffer-form select {
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#suppoffer-form select {
+  height: 25px;
+}
+
+#suppoffer-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#suppoffer-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suppoffer-form div input, #suppoffer-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#suppoffer-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.suppoffer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  justify-content: center;
+  justify-items: center;
+}
+
+#suppoffer-main {
+  text-decoration: none;
+}
+
+#suppoffer-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#suppoffer-main .recherche {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#suppoffer-main .form {
+  margin-bottom: 50px;
+}
+
+#suppoffer-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px;
+  text-decoration: none;
+}
+
+#suppoffer-main #but:hover {
+  background-color: #706b6b;
+}
+
+#suppoffer-body {
+  margin-bottom: 200px;
+}
+
+#suppoffer-body label {
+  font-size: 24px;
+}
+
+#suppoffer-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suppoffer-form input, #suppoffer-form select {
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#suppoffer-form select {
+  height: 25px;
+}
+
+#suppoffer-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#suppoffer-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suppoffer-form div input, #suppoffer-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#suppoffer-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.suppoffer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.main-content .h1-content {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.main-content .hr-content {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.body-content {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 200px;
+}
+
+.body-content .label-content {
+  font-size: 24px;
+}
+
+.form-profile-creation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 50px 0px 50px;
+}
+
+.form-profile-creation .input-box,
+.form-profile-creation .select-box {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+}
+
+.form-profile-creation .select-box {
+  height: 33px;
+}
+
+.form-profile-creation .label-content {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form-profile-creation .div-box-input,
+.form-profile-creation .div-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-profile-creation .div-box-input .input-box,
+.form-profile-creation .div-box-input .select-box,
+.form-profile-creation .div-box .input-box,
+.form-profile-creation .div-box .select-box {
+  width: 257px;
+  text-align: center;
+}
+
+.form-profile-creation #login_and_password_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Surname_Name_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.form-profile-creation #Delegate_rights {
+  display: none;
+}
+
+.form-profile-creation #Training_center_box {
+  display: inline;
+}
+
+.form-profile-creation #button-submit_form {
+  width: 100px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
+}
+
+#createOffice-main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#createOffice-main #but {
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px;
+}
+
+#createOffice-main #but:hover {
+  background-color: #706b6b;
+}
+
+#createOffice-body label {
+  font-size: 24px;
+}
+
+#createOffice-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#createOffice-form input,
+#createOffice-form select {
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 15;
+  text-align: center;
+}
+
+#createOffice-form select {
+  height: 20;
+}
+
+#createOffice-form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#createOffice-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#createOffice-form div input,
+#createOffice-form div select {
+  width: 257px;
+  text-align: center;
+}
+
+#createOffice-form #company_name_and_siren {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.header_propos {
+  text-align: center;
+}
+
+.paragraphe {
+  z-index: 300;
+  text-align: center;
+  font-size: 18px;
+}
+
+#logo-cesi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 180px;
+  height: 0px;
+  left: 90%;
+  z-index: 1;
+}
+
+#campus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 239px;
+  height: 145px;
+  left: 50%;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Color */
+/* Size */
+/* Padding */
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+/* Basic styling */
+.navbar {
+  background: #181818;
+  padding: 0 15px;
+  font-family: 16px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar .navbar-item {
+  padding: 10px;
+}
+
+.rod {
+  width: 50%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.navbar-menu,
+.navbar-submenu {
+  list-style-type: none;
+}
+
+.navbar-logo {
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
+}
+
+.navbar-item a:hover::after {
+  color: #ccc;
+}
+
+/* Mobile menu */
+.navbar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-menu li a {
+  display: block;
+  padding: 15px 5px;
+}
+
+.navbar-menu li.navbar-subitem a {
+  padding: 15px;
+}
+
+.navbar-toggle {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  font-size: 20px;
+}
+
+.navbar-item {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.active .navbar-item {
+  display: block;
+  z-index: 100;
+  background-color: #181818;
+}
+
+/* Submenu up from mobile screens */
+.navbar-submenu {
+  display: none;
+}
+
+.navbar-submenu-active .navbar-submenu {
+  display: block;
+}
+
+.has-submenu i {
+  font-size: 12px;
+}
+
+.has-submenu > a::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 900;
+  content: "\f078";
+  color: white;
+  padding-left: 5px;
+}
+
+.navbar-subitem a {
+  padding: 10px 15px;
+}
+
+.navbar-submenu-active {
+  background-color: black;
+  border-radius: 3px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+  .navbar-menu {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar-logo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .navbar-toggle {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    text-align: right;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+/* Desktop menu */
+@media all and (min-width: 960px) {
+  .navbar-menu {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    background: none;
+  }
+  .navbar-logo {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .navbar-item {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .navbar-submenu-active .navbar-submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 68px;
+    background: #111;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-submenu-active {
+    border-radius: 0;
+  }
+}
+
+/* FOOTER */
+.footer-trait {
+  margin: 15px;
+}
+
+HR {
+  color: #C4C4C4;
+}
+
+#footer-pp {
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+}
+
+#footer-center-things {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#footer-center-things .p {
+  color: #3a3a3a;
+}
+
+#footer-member {
+  margin: 25px;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  z-index: 1;
+}
+
+footer .footer-legal {
+  color: #b9b9b9;
+  background: #323232;
+  padding: 20px;
+}
+
+footer #footer-apropos {
+  text-decoration: none;
+  color: #b9b9b9;
+  margin-left: 2px;
+}
+
+/* Color */
+/* Size */
+/* Padding */
+/*# sourceMappingURL=style.css.map */

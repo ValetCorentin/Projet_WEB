@@ -1,0 +1,30 @@
+.header_propos {
+  text-align: center;
+}
+
+.paragraphe {
+  z-index: 300;
+  text-align: center;
+  font-size: 18px;
+}
+
+#logo-cesi {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 180px;
+  height: 0px;
+  left: 90%;
+  z-index: 1;
+}
+
+#campus {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 239px;
+  height: 145px;
+  left: 50%;
+  z-index: 1;
+  opacity: 0.3;
+}

@@ -1,0 +1,64 @@
+@import '../settings/_variables';
+@import '../settings/_mixins';
+#createCompany-main {
+  h1 {
+    margin-top: 80px;
+    text-align: center;
+  }
+  #but {
+    background-color: #5a5a5a;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    margin-top: 16px;
+    &:hover {
+      background-color: rgb(112, 107, 107);
+    }
+  }
+}
+
+#createCompany-body {
+  label {
+    font-size: 24px;
+  }
+}
+
+// Formulaire de crÃ©ation de profil //
+#createCompany-form {
+  display: flex;
+  flex-direction: column;
+  // Stylisme des inputs //
+  input,
+  select {
+    background-color: $background-color_input;
+    border-radius: 5px;
+    border-color: transparent;
+    height: $size_input;
+    text-align: center;
+  }
+  select {
+    height: $size_input + 8;
+  }
+  label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    input,
+    select {
+      width: 257px;
+      text-align: center;
+    }
+  }
+  #company_name_and_siren {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
