@@ -210,16 +210,16 @@
         <input type="text" name="Country" id="Country_Input" required />
       </div>
 
-      <div class="div-box-input" id="Region_box">
-        <!-- Region -->
-        <label for="Region">Région</label>
-        <input type="text" name="Region" id="Region_Input" required />
-      </div>
-
       <div class="div-box-input" id="ZIP_Code_box">
         <!-- ZIP_Code -->
         <label for="ZIP_Code">Code Postal</label>
         <input type="text" name="ZIP_Code" id="ZIP_Code_Input" required />
+      </div>
+
+      <div class="div-box-input" id="Region_box">
+        <!-- Region -->
+        <label for="Region">Région</label>
+        <input type="text" name="Region" id="Region_Input" required />
       </div>
 
       <div class="div-box-input" id="City_box">
