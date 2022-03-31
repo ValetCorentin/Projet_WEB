@@ -67,28 +67,7 @@
       </div>
 
         <?php
-
-        // $administratorBool = 'null';
-        // $pilotBool = 'null';
-        // $studentBool = 'null';
-        // $delegateBool = 'null';
-
-
-        // if($data['Del_pilot'] == 1){ //pas de droit del-administrator dans la BDD
-        //   $administratorBool = 'Administrator';
-        // }
-        // if($data['Del_pilot'] == 1){
-        //   $pilotBool = 'Pilot';
-        // }
-        // if($data['Del_student'] == 1){
-        //   $studentBool = 'Student';
-        // }
-        // if($data['Del_representative'] == 1){ //A revoir
-        //   $delegateBool = 'Delegate';
-        // }
-        
-
-
+      
         if(isset($_GET['name'])){
           $name = $_GET['name'];
           

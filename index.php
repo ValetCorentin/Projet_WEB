@@ -207,6 +207,7 @@ if(isset($_GET['domain'])){
 
     <!-- Script -->
     <script src="./js/js.js"></script>
+    
 
   </body>
 </html>

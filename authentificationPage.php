@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -18,7 +14,6 @@ session_start();
 </head>
 
 <body>
-    <!-- https://stackoverflow.com/questions/686155/remove-a-cookie -->
 
     <main id="main-box">
         <div id="authentification-box" style="margin:12px;">
