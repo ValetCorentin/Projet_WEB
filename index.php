@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
+    <!-- PWA -->
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="./manifest.json">
+    <script src="js/index.js"></script>
+
     <title>Chopes ton stage</title>
 </head>
 
