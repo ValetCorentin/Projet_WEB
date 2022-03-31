@@ -1,0 +1,116 @@
+main h1 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+main hr {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 200px;
+}
+
+body label {
+  font-size: 24px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 50px 0px 50px;
+}
+
+form input,
+form select {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 25px;
+}
+
+form select {
+  height: 33px;
+}
+
+form label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+form .div-box-input,
+form .div-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form .div-box-input input,
+form .div-box-input select,
+form .div-box input,
+form .div-box select {
+  width: 257px;
+  text-align: center;
+}
+
+form #login_and_password_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+form #Surname_Name_box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+form #Delegate_rights {
+  display: none;
+}
+
+form #Training_center_box {
+  display: inline;
+}
+
+form #button-submit_form {
+  width: 100px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-color: black;
+  border-radius: 3px;
+  margin-top: 40px;
+}
+/*# sourceMappingURL=sass.css.map */

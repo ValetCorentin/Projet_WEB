@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chopes ton stage - Modification d'un profil étudiant</title>
+  <link rel="stylesheet" href="sass.css" />
+  <?php @require_once './DataBaseConnection.php'; ?>
+</head>
+
+<body>
+  <?php @require_once './navbar.php'; ?>
+  <main>
+    <h1>Modification d'un profil étudiant</h1>
+    <hr />
+
+    <form action="" name="Profil_update_form" method="post">
+      <div class="div-box" id="login_and_password_box">
+        <div class="div-box-input" id="Login_ID_box">
+          <!-- Login ID -->
+          <label for="Login_ID">Identifiant de connexion</label>
+          <input type="text" name="Login_ID" id="Login_ID_Input" required />
+        </div>
+
+        <div class="div-box-input" id="Password_box">
+          <!-- Password -->
+          <label for="Login_Password">Mot de passe</label>
+          <input type="password" name="Login_Password" id="Login_Password_Input" minlength="8" placeholder="8 caractères minimum" required />
+        </div>
+      </div>
+
+      <div class="div-box" id="Surname_Name_box">
+        <div class="div-box-input" id="Surname_box">
+          <!-- Surname -->
+          <label for="Surname">Nom</label>
+          <input type="text" name="Surname" id="Surname_Input" required />
+        </div>
+
+        <div class="div-box-input" id="Name_box">
+          <!-- Name -->
+          <label for="Name">Prénom</label>
+          <input type="text" name="Name" id="Name_Input" required />
+        </div>
+      </div>
+
+      <div class="div-box-input" id="E-mail_box">
+        <!-- E-mail -->
+        <label for="E-mail">E-mail</label>
+        <input type="email" name="E-mail" id="E-mail_Input" required />
+      </div>
+
+      <div class="div-box-input" id="Training_center_box">
+        <div class="div-box-input" id="Training_center_name_box">
+          <!-- Training center -->
+          <label for="Training_center">Centre de formation</label>
+          <input list="Training_center_list" type="text" name="Training_center" class="student_form_properties" id="Training_center_Input" required />
+
+          <?php
+
+          $sqlQuery = $conn->query("SELECT Training_center_name FROM training_center;");
+          $recipes = $sqlQuery->fetchAll();
+          ?>
+          <datalist id="Training_center_list">
+            <?php
+            foreach ($recipes as $recipe) { ?>
+              <option value="<?= htmlentities($recipe->Training_center_name) ?>">
+              <?php
+            }
+              ?>
+          </datalist>
+
+        </div>
+        <div class="div-box-input" id="Training_center_promotion_box">
+          <!-- Training center promotion -->
+          <label for="Training_center_promotion">Promotion de l'étudiant</label>
+          <input type="text" name="Training_center_promotion" class="student_form_properties" id="Training_center_promotion_Input" />
+        </div>
+      </div>
+
+      <div class="div-box-input" id="Country_box">
+        <!-- Country -->
+        <label for="Country">Pays</label>
+        <input type="text" name="Country" id="Country_Input" required />
+      </div>
+
+      <div class="div-box-input" id="ZIP_Code_box">
+        <!-- ZIP_Code -->
+        <label for="ZIP_Code">Code Postal</label>
+        <input type="text" maxlength="5" name="ZIP_Code" id="ZIP_Code_Input" required />
+      </div>
+
+      <div class="div-box-input" id="City_box">
+        <!-- City -->
+        <label for="City">Ville</label>
+        <input list="City_list" type="text" name="City" id="City_Input" required />
+        <datalist id="City_list"></datalist>
+      </div>
+
+      <div class="div-box-input" id="Region_box">
+        <!-- Region -->
+        <label for="Region">Région</label>
+        <input type="text" name="Region" id="Region_Input" required />
+      </div>
+
+      <div class="div-box-input" id="Address_box">
+        <!-- Address -->
+        <label for="Address">Adresse</label>
+        <input type="text" name="Address" id="Address_Input" required />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="div-box-input" id="button-submit_form">
+        Créer
+      </button>
+    </form>
+  </main>
+
+  <?php @require_once './footer.php'; ?>
+
+  <script src="./script_Modif_Student.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+</body>
+
+</html>
