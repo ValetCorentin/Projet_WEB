@@ -187,13 +187,13 @@
           $sqlQuery = $conn->query("SELECT Training_center_name FROM training_center;");
           $recipes = $sqlQuery->fetchAll();
           ?>
-          <datalist id="Training_center_list" >
+          <datalist id="Training_center_list">
             <?php
-              foreach ($recipes as $recipe){?>
+            foreach ($recipes as $recipe) { ?>
               <option value="<?= htmlentities($recipe->Training_center_name) ?>">
               <?php
-              }
-            ?>
+            }
+              ?>
           </datalist>
 
         </div>
@@ -213,19 +213,20 @@
       <div class="div-box-input" id="ZIP_Code_box">
         <!-- ZIP_Code -->
         <label for="ZIP_Code">Code Postal</label>
-        <input type="text" name="ZIP_Code" id="ZIP_Code_Input" required />
+        <input type="text" maxlength="5" name="ZIP_Code" id="ZIP_Code_Input" required />
+      </div>
+
+      <div class="div-box-input" id="City_box">
+        <!-- City -->
+        <label for="City">Ville</label>
+        <input list="City_list" type="text" name="City" id="City_Input" required />
+        <datalist id="City_list"></datalist>
       </div>
 
       <div class="div-box-input" id="Region_box">
         <!-- Region -->
         <label for="Region">Région</label>
         <input type="text" name="Region" id="Region_Input" required />
-      </div>
-
-      <div class="div-box-input" id="City_box">
-        <!-- City -->
-        <label for="City">Ville</label>
-        <input type="text" name="City" id="City_Input" required />
       </div>
 
       <div class="div-box-input" id="Address_box">
@@ -241,6 +242,8 @@
     </form>
   </main>
   <script src="./script_CreateProfile.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
 </body>
 
 </html>
