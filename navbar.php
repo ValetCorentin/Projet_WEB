@@ -7,12 +7,12 @@ $data = json_decode($_COOKIE['user_profil'], true);
 <header>
       <nav class="navbar">
         <ul class="navbar-menu">
-          <li class="navbar-logo"><a href="index.php">Chopes ton stage</a></li>
+          <li class="navbar-logo"><a href="home.php">Chopes ton stage</a></li>
           <li class="navbar-item has-submenu">
             <a tabindex="0">Rechercher</a>
             <ul class="navbar-submenu">
             <?php if($data['LF_offer']==1){ 
-                echo('<li class="navbar-subitem"><a href="index.php">Stages</a></li>');
+                echo('<li class="navbar-subitem"><a href="home.php">Stages</a></li>');
                 };?>
                 <?php if($data['LF_company']==1){ 
                 echo('<li class="navbar-subitem"><a href="companyPage.php">Entreprises</a></li>');
