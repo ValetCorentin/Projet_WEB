@@ -43,6 +43,12 @@
   border-radius: 16px;
 }
 
+@media all and (max-width: 700px) {
+  #main-box {
+    margin:0%;
+  }
+}
+
 #authentification-box {
   display: flex;
   flex-direction: column;

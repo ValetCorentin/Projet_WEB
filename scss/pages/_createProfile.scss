@@ -1,4 +1,9 @@
-// Variables
+// Mixins
+@mixin box_disposition {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}// Variables
 $size_input: 25px;
 $background-color_input: rgba(229, 229, 229, 1);
 .main-content {
